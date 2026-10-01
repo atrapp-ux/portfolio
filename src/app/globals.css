@@ -88,6 +88,14 @@ body {
   padding: 15px 13px 18px;
 }
 
+/* 500–765px: same wide rectangle, with 150px of side space. */
+@media (min-width: 500px) and (max-width: 765px) {
+  .intro-card {
+    width: calc(100vw - 300px);
+    max-width: calc(100% - 268px);
+  }
+}
+
 /* Tablet: same overlap, more room for the intro. */
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero-fit {
