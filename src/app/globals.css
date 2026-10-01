@@ -78,8 +78,8 @@ body {
 .intro-card {
   position: relative;
   z-index: 1;
-  width: 220px;
-  max-width: calc(100% - 18px);
+  width: calc(100vw - 120px);
+  max-width: calc(100% - 88px);
   margin-top: -30%;
   margin-left: auto;
   margin-right: auto;
@@ -101,6 +101,7 @@ body {
 
   .intro-card {
     width: min(460px, 86%);
+    max-width: none;
     margin-top: -42%;
     margin-left: auto;
     margin-right: auto;
@@ -153,6 +154,7 @@ body {
     left: 491px;
     top: 99px;
     width: 532px;
+    max-width: none;
     min-height: 255px;
     margin: 0;
     border-radius: 21px;
