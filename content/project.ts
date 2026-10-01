@@ -8,6 +8,9 @@
  *
  * Image: set `image.src` to a path in `public/` (for example "/projects/cover.png").
  * Leave `src` empty to keep the white placeholder.
+ *
+ * Button: edit `cta.label` for the words on the button, and `cta.href` for
+ * where it goes. Leave `href` empty until the project page exists.
  */
 
 export const projectArrows = {
@@ -61,5 +64,9 @@ export const projectCard = {
     src: "",
     alt: "",
     label: "IMAGE PLACEHOLDER",
+  },
+  cta: {
+    label: "View Project",
+    href: "",
   },
 } as const;
