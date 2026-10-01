@@ -60,7 +60,7 @@ body {
   margin: 8px 0 0;
   font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.4;
   font-synthesis: none;
 }
@@ -587,6 +587,20 @@ body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px 12px;
     margin-top: 16px;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+
+  .project-summary,
+  .project-meta-body,
+  .project-impact-copy p {
+    font-size: 12px;
+  }
+
+  .project-kicker {
+    font-size: 14px;
   }
 
   .project-impacts h3 {
