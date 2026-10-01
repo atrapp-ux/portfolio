@@ -468,7 +468,8 @@ body {
     left: 6.4987%;
     right: 7.4271%;
     top: 0;
-    bottom: 0;
+    bottom: auto;
+    height: calc(100% + 48px);
     background: #dff1c5;
     border: 0.799px solid #787878;
     border-radius: 30px;
