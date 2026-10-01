@@ -182,3 +182,195 @@ body {
     line-height: 1.4;
   }
 }
+
+/* Project card: the Figma frame, centered and scaled to the viewport. */
+.project-section {
+  container-type: inline-size;
+  padding: 72px 0 96px;
+  background: var(--page);
+}
+
+.project-fit {
+  width: min(1323px, calc(100cqi - 32px));
+  height: calc(805 * min(1323px, calc(100cqi - 32px)) / 1323);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.project-frame {
+  position: relative;
+  width: 1323px;
+  height: 805px;
+  transform-origin: top left;
+  transform: scale(calc(min(1323px, calc(100cqi - 32px)) / 1323px));
+}
+
+.project-panel {
+  position: absolute;
+  left: 10px;
+  top: 60px;
+  box-sizing: border-box;
+  width: 1188px;
+  height: 698px;
+  padding: 55px 387px 40px 55px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 0.8px solid #787878;
+  border-radius: 30px;
+  box-shadow: 0 0 9.831px rgba(0, 0, 0, 0.08);
+}
+
+.project-title {
+  margin: 0;
+  max-width: 513px;
+  color: var(--ink);
+  font-family: var(--font-display), "Google Sans Flex", "Google Sans", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.project-summary {
+  margin: 20px 0 0;
+  max-width: 746px;
+  color: var(--ink);
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.project-rule {
+  display: block;
+  margin: 28px 0 0;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: 390px 24px 140px 28px 150px;
+  align-items: start;
+  width: 746px;
+  margin-top: 16px;
+}
+
+.project-kicker {
+  margin: 0;
+  color: #999;
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.project-meta-body {
+  margin: 16px 0 0;
+  max-width: 395px;
+  color: var(--ink);
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.project-meta-plain {
+  white-space: pre-line;
+}
+
+.project-rule-v {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  height: 148px;
+  margin-top: 4px;
+}
+
+.project-rule-v img {
+  transform: rotate(-90deg);
+}
+
+.project-impact-label {
+  margin-top: 28px;
+}
+
+.project-impacts {
+  display: grid;
+  grid-template-columns: 240px 250px 220px;
+  gap: 12px;
+  width: 746px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-impacts h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display), "Google Sans Flex", "Google Sans", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.project-impact-copy {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.project-impact-copy p {
+  margin: 0;
+  color: var(--ink);
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.project-arrow {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 21px;
+  margin-top: 1px;
+}
+
+.project-arrow img {
+  transform: rotate(var(--arrow-rotation));
+}
+
+.project-slot {
+  position: absolute;
+  left: 841px;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 399px;
+  height: 805px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 28px;
+}
+
+.project-slot p {
+  width: 126px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display), "Google Sans Flex", "Google Sans", Arial, sans-serif;
+  font-size: 12.852px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.project-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 27px;
+}

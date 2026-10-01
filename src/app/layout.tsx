@@ -5,14 +5,14 @@ import "./globals.css";
 
 const display = Google_Sans_Flex({
   subsets: ["latin"],
-  weight: "700",
+  weight: ["500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
 
 const mono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600"],
   variable: "--font-mono",
   display: "swap",
 });
