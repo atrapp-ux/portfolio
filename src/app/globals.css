@@ -96,8 +96,8 @@ body {
   }
 }
 
-/* Tablet: same overlap, more room for the intro. */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* 766–1023px: intro sits on the upper right of the stack, short of the screen edge. */
+@media (min-width: 766px) and (max-width: 1023px) {
   .hero-fit {
     width: min(720px, calc(100% - 48px));
     margin: 56px auto 72px;
@@ -108,11 +108,11 @@ body {
   }
 
   .intro-card {
-    width: min(460px, 86%);
+    width: min(460px, 78%);
     max-width: none;
-    margin-top: -42%;
+    margin-top: -50%;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 8%;
     border-radius: 21px;
     padding: 32px 36px 36px 40px;
   }
