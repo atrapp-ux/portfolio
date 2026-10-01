@@ -183,6 +183,171 @@ body {
   }
 }
 
+/* Tools bar: six icon tiles. Dividers show only in the desktop row. */
+.tools-section {
+  background: var(--page);
+  padding: 8px 16px 0;
+}
+
+.tools-bar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 4px;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.tool {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 16px 10px 14px;
+  text-align: center;
+}
+
+.tool p {
+  margin: 10px 0 0;
+  max-width: 140px;
+  color: var(--ink);
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.tools-rule {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  .tools-section {
+    padding-top: 16px;
+  }
+
+  .tools-bar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 760px;
+    gap: 12px 8px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .tools-section {
+    padding: 20px 24px 0;
+  }
+
+  .tools-bar {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 1091px;
+    height: 110px;
+    gap: 0;
+  }
+
+  .tool {
+    flex: 1 1 0;
+    justify-content: flex-start;
+    padding: 13px 10px 0;
+  }
+
+  .tool p {
+    max-width: 129px;
+    margin-top: 8px;
+    font-size: 11.949px;
+  }
+
+  .tools-rule {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .tools-rule img {
+    flex: 0 0 auto;
+    width: 217.09px;
+    height: 1.19492px;
+    max-width: none;
+    transform: rotate(90deg);
+  }
+}
+
+/* Goal quote under the tools bar. */
+.quotes-section {
+  background: #fff;
+  padding: 32px 20px 48px;
+  text-align: center;
+}
+
+.quotes-label {
+  margin: 0;
+  color: #999;
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.quotes-text {
+  margin: 6px auto 0;
+  max-width: 896px;
+  color: var(--ink);
+  font-family: var(--font-display), "Google Sans Flex", "Google Sans", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: pre-line;
+}
+
+.quotes-accent {
+  color: var(--name);
+}
+
+@media (min-width: 768px) {
+  .quotes-section {
+    padding: 36px 48px 56px;
+  }
+
+  .quotes-label {
+    font-size: 16px;
+  }
+
+  .quotes-text {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .quotes-section {
+    padding: 37px 0 65px;
+  }
+
+  .quotes-inner {
+    box-sizing: border-box;
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 0 161px 0 223px;
+  }
+
+  .quotes-text {
+    width: 896px;
+    max-width: 100%;
+    font-size: 34px;
+  }
+}
+
 /* Project card: the Figma frame, centered and scaled to the viewport. */
 .project-section {
   container-type: inline-size;
