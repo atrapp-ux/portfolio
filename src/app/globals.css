@@ -47,7 +47,7 @@ body {
   margin: 0;
   font-family: var(--font-display), "Google Sans Flex", "Google Sans", Arial, sans-serif;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 18px;
   line-height: 1.3;
   letter-spacing: 0;
 }
@@ -57,10 +57,10 @@ body {
 }
 
 .intro-card p {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 10px;
   line-height: 1.4;
   font-synthesis: none;
 }
@@ -78,12 +78,13 @@ body {
 .intro-card {
   position: relative;
   z-index: 1;
-  width: calc(100% - 18px);
+  width: 220px;
+  max-width: calc(100% - 18px);
   margin-top: -30%;
-  margin-left: 18px;
+  margin-left: auto;
   min-height: 0;
-  border-radius: 18px;
-  padding: 24px 20px 28px;
+  border-radius: 12px;
+  padding: 15px 13px 18px;
 }
 
 /* Tablet: same overlap, more room for the intro. */
