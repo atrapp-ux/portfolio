@@ -288,33 +288,17 @@ body {
 }
 
 .project-rule-v {
-  position: relative;
-  width: 1px;
-  height: 148px;
-  margin-top: 4px;
+  align-self: stretch;
   justify-self: center;
-  overflow: visible;
+  width: 1px;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  background: repeating-linear-gradient(to bottom, #9b9b9b 0 5px, transparent 5px 10px);
 }
 
 .project-rule-v img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  max-width: none;
-  transform-origin: center center;
-}
-
-.project-rule-v-long {
-  width: 148px;
-  height: 1px;
-  transform: translateX(-74px) rotate(-90deg) translate(-50%, -50%);
-}
-
-.project-rule-v-short {
   display: none;
-  width: 68px;
-  height: 1px;
-  transform: translateX(-34px) rotate(-90deg) translate(-50%, -50%);
 }
 
 .project-impact-label {
@@ -566,17 +550,9 @@ body {
   .project-rule-v-split {
     grid-column: 2;
     grid-row: 3;
-    height: 68px;
-    margin-top: 0;
-    align-self: start;
-  }
-
-  .project-rule-v-split .project-rule-v-long {
-    display: none;
-  }
-
-  .project-rule-v-split .project-rule-v-short {
-    display: block;
+    align-self: stretch;
+    height: auto;
+    margin: 0;
   }
 
   .project-impact-label {
