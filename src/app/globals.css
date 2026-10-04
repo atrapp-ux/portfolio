@@ -189,7 +189,7 @@ body {
 .tools-section {
   position: relative;
   z-index: 1;
-  background: var(--page);
+  background: transparent;
   padding: 8px 16px 36px;
   --fit-w: calc(100% - 32px);
   --intro-top: calc(28px + var(--fit-w) * 386 / 738 - var(--fit-w) * 0.3);
@@ -260,7 +260,7 @@ body {
 
 @media (min-width: 1100px) {
   .tools-section {
-    padding: 20px 24px 88px;
+    padding: 20px 24px 48px;
   }
 
   .tools-bar {
