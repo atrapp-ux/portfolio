@@ -1,6 +1,11 @@
 /**
- * Project card copy and icons.
- * Edit this file to change the card. Layout and styles do not need to change.
+ * Project cards. The homepage renders this list in order.
+ *
+ * Add a card: copy an entry and paste it into `projects`.
+ * Reorder: move entries up or down in the array.
+ * Image side: set `layout` to `imageRight` (placeholder on the right)
+ * or `imageLeft` (placeholder on the left). On screens under 768px both
+ * layouts use the slim stack, with the image on top.
  *
  * Arrows: set each impact's `arrow` to a key in `projectArrows`.
  * `down` is the pink arrow, `up` is the green arrow.
@@ -26,7 +31,26 @@ export const projectArrows = {
 
 export type ProjectArrow = keyof typeof projectArrows;
 
-export const projectCard = {
+export type ProjectLayout = "imageRight" | "imageLeft";
+
+type ProjectFields = {
+  title: string;
+  summary: string;
+  problem: { label: string; body: string };
+  timeline: { label: string; body: string };
+  platform: { label: string; body: string };
+  impactLabel: string;
+  impacts: { title: string; body: string; arrow: ProjectArrow }[];
+  image: { src: string; alt: string; label: string };
+  cta: { label: string; href: string };
+};
+
+export type ProjectCardContent = ProjectFields & {
+  id: string;
+  layout: ProjectLayout;
+};
+
+const projectTemplate: ProjectFields = {
   title: "Project Title",
   summary:
     "Increasing hiring team’s confidence in online testing in a world of AI while improving candidate experience to encourage authentic work.",
@@ -69,4 +93,11 @@ export const projectCard = {
     label: "View Project",
     href: "",
   },
-} as const;
+};
+
+export const projects: ProjectCardContent[] = [
+  { id: "project-1", layout: "imageRight", ...projectTemplate },
+  { id: "project-2", layout: "imageLeft", ...projectTemplate },
+  { id: "project-3", layout: "imageRight", ...projectTemplate },
+  { id: "project-4", layout: "imageLeft", ...projectTemplate },
+];

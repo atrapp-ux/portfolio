@@ -609,6 +609,29 @@ body {
   margin-left: 4px;
 }
 
+.project-fit + .project-fit {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .project-fit + .project-fit {
+    margin-top: 72px;
+  }
+
+  .project-frame-left .project-panel {
+    left: 125px;
+    padding: 55px 55px 40px 387px;
+  }
+
+  .project-frame-left .project-slot {
+    left: 83px;
+  }
+
+  .project-frame-left .project-cta-row {
+    right: 55px;
+  }
+}
+
 @media (max-width: 767px) {
   .project-section {
     padding: 40px 0 72px;
