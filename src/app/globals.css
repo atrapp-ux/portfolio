@@ -183,10 +183,17 @@ body {
   }
 }
 
-/* Tools bar: six icon tiles. Dividers show only in the desktop row. */
+/* Tools bar: six icon tiles. Dividers show only in the desktop row.
+   Negative margin closes the hero's unused viewport height. Desktop and
+   tablet land on the card stack; mobile stops under the intro box. */
 .tools-section {
+  position: relative;
+  z-index: 1;
   background: var(--page);
-  padding: 8px 16px 0;
+  padding: 8px 16px 36px;
+  --fit-w: calc(100% - 32px);
+  --intro-top: calc(28px + var(--fit-w) * 386 / 738 - var(--fit-w) * 0.3);
+  margin-top: min(0px, calc(var(--intro-top) + 280px - 100svh));
 }
 
 .tools-bar {
@@ -223,9 +230,18 @@ body {
   display: none;
 }
 
+@media (min-width: 766px) and (max-width: 1023px) {
+  .tools-section {
+    --stack-w: min(720px, 100% - 48px);
+    --cards-bottom: calc(56px + var(--stack-w) * 0.92 * 386 / 738);
+    margin-top: min(0px, calc(var(--cards-bottom) - 40px - 100svh));
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1099px) {
   .tools-section {
     padding-top: 16px;
+    padding-bottom: 56px;
   }
 
   .tools-bar {
@@ -235,9 +251,16 @@ body {
   }
 }
 
+@media (min-width: 1024px) {
+  .tools-section {
+    --hero-scale: calc(min(1280px, 100%) / 1280px);
+    margin-top: calc(528px * var(--hero-scale) - 56px - max(100svh, 560px * var(--hero-scale)));
+  }
+}
+
 @media (min-width: 1100px) {
   .tools-section {
-    padding: 20px 24px 0;
+    padding: 20px 24px 88px;
   }
 
   .tools-bar {
