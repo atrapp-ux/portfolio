@@ -196,7 +196,7 @@ body {
   --cards-bottom: calc(28px + var(--fit-w) * 386 / 738);
   --intro-w: calc(100vw - 120px);
   --intro-allowance: max(264px - (var(--intro-w) - 200px) * 1.15, 192px - (var(--intro-w) - 270px) * 0.22);
-  margin-top: min(0px, calc(max(var(--intro-top) + var(--intro-allowance), var(--cards-bottom)) - 22px - 100svh));
+  margin-top: min(0px, calc(max(var(--intro-top) + var(--intro-allowance) - 12px, var(--cards-bottom) - 4px) - 100svh));
 }
 
 .tools-bar {
