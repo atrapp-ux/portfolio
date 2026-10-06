@@ -14,8 +14,8 @@
  * Image: set `image.src` to a path in `public/` (for example "/projects/cover.png").
  * Leave `src` empty to keep the white placeholder.
  *
- * Button: `cta.label` is the words on the card button. It does not open
- * a page or an overlay. `cta.href` is unused.
+ * Button: `cta.label` is the words on the card button. Clicking it opens
+ * a blank sheet over the homepage. `cta.href` is unused.
  */
 
 export const projectArrows = {

@@ -1,4 +1,8 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { projectArrows, projects, type ProjectArrow, type ProjectCardContent } from "@content/project";
+import { ProjectOverlay } from "@/components/project-overlay";
 
 function Rule({ placement = "section" }: { placement?: "section" | "split" }) {
   const slim = placement === "split";
@@ -46,7 +50,13 @@ function ImpactArrow({ name }: { name: ProjectArrow }) {
   );
 }
 
-function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
+function ProjectCardArticle({
+  card,
+  onOpen,
+}: {
+  card: ProjectCardContent;
+  onOpen: (button: HTMLButtonElement) => void;
+}) {
   const titleId = `${card.id}-title`;
 
   return (
@@ -103,7 +113,7 @@ function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
             ))}
           </ul>
           <div className="project-cta-row">
-            <button type="button" className="project-cta">
+            <button type="button" className="project-cta" onClick={(event) => onOpen(event.currentTarget)}>
               <span>{card.cta.label}</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/project-card/cta-arrow.svg" alt="" width={25.8583} height={28.4193} />
@@ -116,11 +126,32 @@ function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
 }
 
 export function ProjectCard() {
+  const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const wasOpen = useRef(false);
+
+  useEffect(() => {
+    if (open) {
+      wasOpen.current = true;
+      return;
+    }
+    if (!wasOpen.current) return;
+    triggerRef.current?.focus();
+  }, [open]);
+
   return (
     <section className="project-section" aria-label="Projects">
       {projects.map((card) => (
-        <ProjectCardArticle key={card.id} card={card} />
+        <ProjectCardArticle
+          key={card.id}
+          card={card}
+          onOpen={(button) => {
+            triggerRef.current = button;
+            setOpen(true);
+          }}
+        />
       ))}
+      {open ? <ProjectOverlay onClose={() => setOpen(false)} /> : null}
     </section>
   );
 }
