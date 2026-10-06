@@ -1,4 +1,8 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { projectArrows, projects, type ProjectArrow, type ProjectCardContent } from "@content/project";
+import { ProjectOverlay } from "@/components/project-overlay";
 
 function Rule({ placement = "section" }: { placement?: "section" | "split" }) {
   const slim = placement === "split";
@@ -46,7 +50,13 @@ function ImpactArrow({ name }: { name: ProjectArrow }) {
   );
 }
 
-function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
+function ProjectCardArticle({
+  card,
+  onOpen,
+}: {
+  card: ProjectCardContent;
+  onOpen: (button: HTMLButtonElement) => void;
+}) {
   const titleId = `${card.id}-title`;
 
   return (
@@ -103,11 +113,11 @@ function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
             ))}
           </ul>
           <div className="project-cta-row">
-            <a className="project-cta" href={card.cta.href || `#${card.id}`}>
+            <button type="button" className="project-cta" onClick={(event) => onOpen(event.currentTarget)}>
               <span>{card.cta.label}</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/project-card/cta-arrow.svg" alt="" width={25.8583} height={28.4193} />
-            </a>
+            </button>
           </div>
         </div>
       </article>
@@ -116,11 +126,33 @@ function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
 }
 
 export function ProjectCard() {
+  const [openId, setOpenId] = useState<string | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const wasOpen = useRef(false);
+  const open = projects.find((card) => card.id === openId) ?? null;
+
+  useEffect(() => {
+    if (openId) {
+      wasOpen.current = true;
+      return;
+    }
+    if (!wasOpen.current) return;
+    triggerRef.current?.focus();
+  }, [openId]);
+
   return (
     <section className="project-section" aria-label="Projects">
       {projects.map((card) => (
-        <ProjectCardArticle key={card.id} card={card} />
+        <ProjectCardArticle
+          key={card.id}
+          card={card}
+          onOpen={(button) => {
+            triggerRef.current = button;
+            setOpenId(card.id);
+          }}
+        />
       ))}
+      {open ? <ProjectOverlay project={open} onClose={() => setOpenId(null)} /> : null}
     </section>
   );
 }
