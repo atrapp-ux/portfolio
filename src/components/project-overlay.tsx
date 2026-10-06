@@ -79,7 +79,7 @@ export function ProjectOverlay({ onClose }: { onClose: () => void }) {
     setOpen(false);
     window.setTimeout(() => {
       if (closingRef.current) onCloseRef.current();
-    }, 520);
+    }, 1160);
   }
 
   function onSheetTransitionEnd(event: React.TransitionEvent<HTMLDivElement>) {
