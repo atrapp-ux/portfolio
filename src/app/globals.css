@@ -656,6 +656,21 @@ body {
   margin-left: 4px;
 }
 
+.project-cta:hover,
+.project-cta:active,
+.project-cta:focus-visible {
+  background: #ff005e;
+  border-color: #ff005e;
+  color: #fff;
+  cursor: pointer;
+}
+
+.project-cta:hover img,
+.project-cta:active img,
+.project-cta:focus-visible img {
+  filter: brightness(0) invert(1);
+}
+
 .project-fit + .project-fit {
   margin-top: 40px;
 }
