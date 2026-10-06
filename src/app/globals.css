@@ -877,80 +877,13 @@ body {
   }
 }
 
-.project-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  display: flex;
-  align-items: flex-end;
-  overflow: visible;
-  background: rgba(17, 17, 17, 0);
-  transition: background-color 1500ms cubic-bezier(0.32, 0, 0.67, 0);
-}
-
-.project-overlay.is-open {
-  background: rgba(17, 17, 17, 0.32);
-  transition: background-color 1500ms cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.project-sheet {
-  position: relative;
-  width: 100%;
-  height: calc(100% - 28px);
-  background: #fff;
-  border-radius: 28px 28px 0 0;
-  box-shadow: 0 -10px 32px rgba(0, 0, 0, 0.14);
-  transform: translate3d(0, 100%, 0);
-  transition: transform 1500ms cubic-bezier(0.32, 0, 0.67, 0);
-  will-change: transform;
-}
-
-.project-sheet.is-open {
-  transform: translate3d(0, 0, 0);
-  transition: transform 1500ms cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.project-sheet-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border: 0;
-  border-radius: 999px;
-  background: #fff;
-  color: #111;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-}
-
-.project-sheet-close:focus-visible,
 .project-cta:focus-visible {
   outline: 2px solid #517aff;
   outline-offset: 3px;
 }
 
-@media (min-width: 768px) {
-  .project-sheet {
-    height: calc(100% - 40px);
-    border-radius: 36px 36px 0 0;
-  }
-
-  .project-sheet-close {
-    top: 20px;
-    right: 20px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .project-overlay,
-  .project-overlay.is-open,
-  .project-sheet,
-  .project-sheet.is-open {
-    transition: none;
-  }
+.project-page {
+  min-height: 100svh;
+  background: var(--page);
 }
 

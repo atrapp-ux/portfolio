@@ -15,7 +15,7 @@
  * Leave `src` empty to keep the white placeholder.
  *
  * Button: `cta.label` is the words on the card button. Clicking it opens
- * a blank sheet over the homepage. `cta.href` is unused.
+ * `/projects/[id]`, a blank page. `cta.href` is unused.
  */
 
 export const projectArrows = {
