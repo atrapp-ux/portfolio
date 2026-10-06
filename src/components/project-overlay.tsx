@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 function motionReduced() {
@@ -20,6 +20,17 @@ export function ProjectOverlay({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     onCloseRef.current = onClose;
   }, [onClose]);
+
+  useLayoutEffect(() => {
+    const sheet = sheetRef.current;
+    const overlay = rootRef.current;
+    if (!sheet || !overlay || motionReduced()) return;
+    // Pin the first paint fully below the viewport, even if a class lands early.
+    sheet.style.transform = "translate3d(0, 100%, 0)";
+    sheet.style.transition = "none";
+    overlay.style.transition = "none";
+    void sheet.offsetHeight;
+  }, []);
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -45,7 +56,13 @@ export function ProjectOverlay({ onClose }: { onClose: () => void }) {
       ? 0
       : window.requestAnimationFrame(() => {
           secondFrame = window.requestAnimationFrame(() => {
-            sheetRef.current?.getBoundingClientRect();
+            const sheet = sheetRef.current;
+            const overlay = rootRef.current;
+            if (sheet) {
+              sheet.style.transition = "";
+              sheet.style.transform = "";
+            }
+            if (overlay) overlay.style.transition = "";
             openRef.current = true;
             setOpen(true);
             closeRef.current?.focus();
