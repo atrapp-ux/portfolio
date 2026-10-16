@@ -15,7 +15,8 @@
  * Leave `src` empty to keep the white placeholder.
  *
  * Button: `cta.label` is the words on the card button. Clicking it opens
- * `/projects/[id]`, a blank page. `cta.href` is unused.
+ * `/projects/[id]`. `summary` is the quote on the card and on that page.
+ * `eyebrow` is the grey line above the quote. `cta.href` is unused.
  */
 
 export const projectArrows = {
@@ -48,6 +49,7 @@ type ProjectFields = {
   impactLabel: string;
   impacts: { title: string; body: string; arrow: ProjectArrow }[];
   image: ProjectImage;
+  eyebrow: string;
   cta: { label: string; href: string };
 };
 
@@ -97,6 +99,7 @@ const projectTemplate: ProjectFields = {
     },
   ],
   image: slot(),
+  eyebrow: "Lead product designer | Owned Research → Shipping | HR/ATS assessment platform",
   cta: {
     label: "View Project",
     href: "",
