@@ -888,10 +888,50 @@ body {
 }
 
 .project-hero {
+  position: relative;
   width: 100%;
   aspect-ratio: 1280 / 464;
   max-height: 464px;
-  background: linear-gradient(180deg, #243a9c 0%, #3d62ef 32%, #7b96fb 58%, #b7c8fc 100%);
+  background-image: url("/project-hero-gradient.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.project-home {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  width: 122px;
+  height: 50px;
+  padding: 12px 16px 12px 21px;
+  border-radius: 77px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.project-home img {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.project-home:hover,
+.project-home:focus-visible {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.project-home:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
 }
 
 .project-heading {
