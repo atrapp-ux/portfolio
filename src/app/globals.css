@@ -998,12 +998,16 @@ body {
   background: #fff;
   border: 1px dashed #9b9b9b;
   border-radius: 14px;
+  overflow: visible;
 }
 
 .project-stats-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns:
+    minmax(min-content, 202fr)
+    minmax(min-content, 220fr)
+    minmax(min-content, 189fr)
+    minmax(min-content, 554fr);
   min-height: 121px;
   margin: 0;
 }
@@ -1011,56 +1015,52 @@ body {
 .project-stats-item {
   position: relative;
   box-sizing: border-box;
-  flex: 1 1 0;
-  min-width: 0;
   min-height: 121px;
-  padding: 33px 16px 22px 45px;
-  overflow: hidden;
+  padding: clamp(22px, calc(22px + (100vw - 402px) * 11 / 797), 33px)
+    clamp(8px, calc(8px + (100vw - 402px) * 8 / 797), 16px)
+    clamp(14px, calc(14px + (100vw - 402px) * 8 / 797), 22px)
+    clamp(10px, calc(10px + (100vw - 402px) * 35 / 797), 45px);
+  overflow: visible;
+}
+
+.project-stats-item dt,
+.project-stats-item dd {
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: clamp(13px, calc(13px + (100vw - 402px) * 3 / 797), 16px);
+  line-height: 1.4;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  overflow-wrap: normal;
 }
 
 .project-stats-item dt {
   margin: 0;
   color: #517aff;
-  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
-  font-size: 16px;
   font-weight: 600;
-  line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .project-stats-item dd {
-  margin: 10px 0 0;
+  margin: clamp(6px, calc(6px + (100vw - 402px) * 4 / 797), 10px) 0 0;
   color: #000;
-  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
-  font-size: 16px;
   font-weight: 400;
-  line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .project-stats-item:first-child {
-  flex: 0 1 202px;
-  padding-left: 49px;
+  padding-left: clamp(10px, calc(10px + (100vw - 402px) * 39 / 797), 49px);
 }
 
 .project-stats-item:nth-child(2) {
-  flex: 0 1 220px;
-  padding-left: 50px;
+  padding-left: clamp(10px, calc(10px + (100vw - 402px) * 40 / 797), 50px);
 }
 
 .project-stats-item:nth-child(3) {
-  flex: 0 1 189px;
-  padding-left: 45px;
+  padding-left: clamp(10px, calc(10px + (100vw - 402px) * 35 / 797), 45px);
 }
 
 .project-stats-item:nth-child(4) {
-  flex: 0 1 554px;
-  padding-left: 37px;
-  padding-right: 32px;
+  padding-left: clamp(8px, calc(8px + (100vw - 402px) * 29 / 797), 37px);
+  padding-right: clamp(8px, calc(8px + (100vw - 402px) * 24 / 797), 32px);
 }
 
 .project-stats-divider {
@@ -1080,6 +1080,7 @@ body {
   }
 
   .project-stats-list {
+    display: flex;
     flex-direction: column;
     min-height: 0;
   }
