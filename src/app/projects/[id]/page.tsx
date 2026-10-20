@@ -33,13 +33,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         </div>
       </section>
       <ProjectStatsBar stats={project.stats} />
-      {project.textImages.map((block) => (
+      {project.textImages.slice(0, 1).map((block) => (
         <ProjectTextImageBlock block={block} key={block.title} />
       ))}
       {project.imageTexts.map((block) => (
         <ProjectImageTextBlock block={block} key={block.sections[0]?.label ?? block.title} />
       ))}
       <ProjectResearch research={project.research} />
+      {project.textImages.slice(1).map((block) => (
+        <ProjectTextImageBlock block={block} key={block.title} />
+      ))}
     </main>
   );
 }

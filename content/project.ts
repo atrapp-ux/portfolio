@@ -17,8 +17,10 @@
  * Button: `cta.label` is the words on the card button. Clicking it opens
  * `/projects/[id]`. `summary` is the quote on the card and on that page.
  * `eyebrow` is the grey line above the quote. `stats` is the facts bar
- * on the project page. `textImages` is the text-and-image blocks under
- * that bar. `imageTexts` is the image-and-text blocks under those.
+ * on the project page. `textImages` is the text-and-image blocks.
+ * The first entry sits under the stats bar. Later entries use the same
+ * block and sit under the Research section. `imageTexts` is the
+ * image-and-text blocks under the first text-and-image block.
  * Set `showTitle` to false, or leave `title` empty, to hide the header.
  * Leave `image.src` empty for the gray placeholder.
  * `research` is the tabbed section under those blocks. Add a tab by
@@ -151,6 +153,20 @@ const projectTemplate: ProjectFields = {
         {
           label: "The Problem",
           body: "With the candidate pools growing and the proliferation of access to AI tools, test score averages were increasing exponentially, causing hiring teams to fear cheating and lose confidence in our product. AI proofing was not an option as AI tools changed daily, but we needed a fast way to regain user confidence and improve on-growing fears around AI usage among candidates.",
+        },
+      ],
+      image: { src: "", alt: "" },
+    },
+    {
+      title: "The Approach.",
+      sections: [
+        {
+          label: "The Direction",
+          body: "Replace this with how the team responded to the research.",
+        },
+        {
+          label: "The Constraint",
+          body: "Replace this with the limit that shaped the solution.",
         },
       ],
       image: { src: "", alt: "" },
