@@ -1129,7 +1129,8 @@ body {
 
 .text-img-title,
 .img-text-title,
-.research-title {
+.research-title,
+.solution-pieces-title {
   margin: 0;
   max-width: 445px;
   color: #000;
@@ -1486,6 +1487,42 @@ body {
   text-underline-position: from-font;
 }
 
+.solution-pieces {
+  box-sizing: border-box;
+  width: min(1280px, calc(100% - 32px));
+  margin: 8px auto 80px;
+  padding: 12px clamp(16px, 1.4vw, 17px) 0 clamp(24px, 6.5vw, 84px);
+}
+
+.solution-pieces-title {
+  margin-bottom: 22px;
+  max-width: none;
+}
+
+.solution-pieces-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(20px, 4.8vw, 72px);
+}
+
+.solution-piece-label {
+  margin: 0;
+  color: #999;
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: clamp(13px, calc(13px + (100vw - 402px) * 3 / 878), 16px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.solution-piece-body {
+  margin: 10px 0 0;
+  color: #000;
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: clamp(14px, calc(14px + (100vw - 402px) * 2 / 878), 16px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 @media (max-width: 402px) {
   .research {
     width: calc(100% - 32px);
@@ -1537,14 +1574,38 @@ body {
     display: none;
   }
 
-  .research-rule {
-    display: none;
-  }
-
   .research-portrait,
   .research-portrait img {
     width: 72px;
     height: 72px;
+  }
+
+  .solution-pieces {
+    width: calc(100% - 32px);
+    margin: 4px auto 56px;
+    padding: 4px 4px 0;
+  }
+
+  .solution-pieces-title {
+    font-size: 22px;
+  }
+
+  .solution-pieces-list {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+    margin-top: 0;
+  }
+
+  .solution-pieces-title {
+    margin-bottom: 16px;
+  }
+
+  .solution-piece-label {
+    font-size: 13px;
+  }
+
+  .solution-piece-body {
+    font-size: 14px;
   }
 }
 

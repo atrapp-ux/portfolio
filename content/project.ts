@@ -26,6 +26,8 @@
  * `research` is the tabbed section under those blocks. Add a tab by
  * appending to `tabs`. A tab can use `paragraphs` (with an optional
  * `aside`) or `columns` (image, heading, and underlined leads).
+ * `solutionPieces` is the three-column block under the later text-image
+ * entries. Add a piece by appending to `pieces`.
  * `cta.href` is unused.
  */
 
@@ -72,6 +74,10 @@ type ProjectFields = {
     sections: { label: string; body?: string; items?: string[] }[];
     image: { src: string; alt: string };
   }[];
+  solutionPieces: {
+    title: string;
+    pieces: { label: string; body: string }[];
+  };
   research: {
     title: string;
     tabs: {
@@ -158,7 +164,7 @@ const projectTemplate: ProjectFields = {
       image: { src: "", alt: "" },
     },
     {
-      title: "The Approach.",
+      title: "The Idea, Constraints, & Challenges.",
       sections: [
         {
           label: "The Direction",
@@ -259,6 +265,23 @@ const projectTemplate: ProjectFields = {
             ],
           },
         ],
+      },
+    ],
+  },
+  solutionPieces: {
+    title: "Solution pieces",
+    pieces: [
+      {
+        label: "The Company",
+        body: "Online application/assessments platform to assess skills in potential candidates both fairly and without bias.",
+      },
+      {
+        label: "The Company",
+        body: "Online application/assessments platform to assess skills in potential candidates both fairly and without bias.",
+      },
+      {
+        label: "The Company",
+        body: "Online application/assessments platform to assess skills in potential candidates both fairly and without bias.",
       },
     ],
   },

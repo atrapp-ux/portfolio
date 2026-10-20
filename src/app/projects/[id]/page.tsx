@@ -2,6 +2,7 @@ import { projects } from "@content/project";
 import { ProjectStatsBar } from "@/components/project-stats-bar";
 import { ProjectImageTextBlock } from "@/components/project-image-text";
 import { ProjectResearch } from "@/components/project-research";
+import { ProjectSolutionPieces } from "@/components/project-solution-pieces";
 import { ProjectTextImageBlock } from "@/components/project-text-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -43,6 +44,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       {project.textImages.slice(1).map((block) => (
         <ProjectTextImageBlock block={block} key={block.title} />
       ))}
+      <ProjectSolutionPieces section={project.solutionPieces} />
     </main>
   );
 }
