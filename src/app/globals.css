@@ -1127,7 +1127,8 @@ body {
   padding: 12px clamp(16px, 1.4vw, 17px) 0 clamp(24px, 6.5vw, 84px);
 }
 
-.text-img-title {
+.text-img-title,
+.img-text-title {
   margin: 0;
   max-width: 445px;
   color: #000;
@@ -1145,7 +1146,8 @@ body {
   margin-top: 22px;
 }
 
-.text-img-label {
+.text-img-label,
+.img-text-label {
   margin: 0;
   color: #999;
   font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
@@ -1154,7 +1156,9 @@ body {
   line-height: 1.4;
 }
 
-.text-img-body {
+.text-img-body,
+.img-text-body,
+.img-text-list {
   margin: 10px 0 0;
   max-width: 582px;
   color: #000;
@@ -1162,6 +1166,55 @@ body {
   font-size: clamp(14px, calc(14px + (100vw - 402px) * 2 / 878), 16px);
   font-weight: 500;
   line-height: 1.4;
+}
+
+.img-text {
+  box-sizing: border-box;
+  width: min(1280px, calc(100% - 32px));
+  margin: 8px auto 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  column-gap: clamp(16px, 2vw, 26px);
+  align-items: start;
+  padding: 36px clamp(24px, 6.5vw, 84px) 0 clamp(24px, 2.5vw, 32px);
+}
+
+.img-text-section {
+  margin-top: 32px;
+}
+
+.img-text-title + .img-text-section,
+.img-text-copy > .img-text-section:first-child {
+  margin-top: 0;
+}
+
+.img-text-title + .img-text-section {
+  margin-top: 22px;
+}
+
+.img-text-list {
+  margin-top: 18px;
+  padding: 0 0 0 24px;
+  list-style: disc;
+}
+
+.img-text-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.img-text-media {
+  margin: 0;
+  aspect-ratio: 450 / 310;
+  width: 100%;
+  background: #efefef;
+}
+
+.img-text-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .text-img-media {
@@ -1205,6 +1258,43 @@ body {
     max-width: none;
     margin-top: 6px;
     font-size: 14px;
+  }
+
+  .img-text {
+    width: calc(100% - 32px);
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+    margin: 4px auto 56px;
+    padding: 4px 4px 0;
+  }
+
+  .img-text-title {
+    max-width: none;
+    font-size: 22px;
+  }
+
+  .img-text-section,
+  .img-text-title + .img-text-section,
+  .img-text-copy > .img-text-section:first-child {
+    margin-top: 22px;
+  }
+
+  .img-text-copy > .img-text-section:first-child {
+    margin-top: 0;
+  }
+
+  .img-text-label {
+    font-size: 13px;
+  }
+
+  .img-text-body,
+  .img-text-list {
+    max-width: none;
+    font-size: 14px;
+  }
+
+  .img-text-list {
+    margin-top: 8px;
   }
 }
 

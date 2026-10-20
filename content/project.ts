@@ -18,7 +18,9 @@
  * `/projects/[id]`. `summary` is the quote on the card and on that page.
  * `eyebrow` is the grey line above the quote. `stats` is the facts bar
  * on the project page. `textImages` is the text-and-image blocks under
- * that bar. Leave `image.src` empty for the gray placeholder.
+ * that bar. `imageTexts` is the image-and-text blocks under those.
+ * Set `showTitle` to false, or leave `title` empty, to hide the header.
+ * Leave `image.src` empty for the gray placeholder.
  * `cta.href` is unused.
  */
 
@@ -57,6 +59,12 @@ type ProjectFields = {
   textImages: {
     title: string;
     sections: { label: string; body: string }[];
+    image: { src: string; alt: string };
+  }[];
+  imageTexts: {
+    showTitle: boolean;
+    title: string;
+    sections: { label: string; body?: string; items?: string[] }[];
     image: { src: string; alt: string };
   }[];
   cta: { label: string; href: string };
@@ -126,6 +134,25 @@ const projectTemplate: ProjectFields = {
         {
           label: "The Problem",
           body: "With the candidate pools growing and the proliferation of access to AI tools, test score averages were increasing exponentially, causing hiring teams to fear cheating and lose confidence in our product. AI proofing was not an option as AI tools changed daily, but we needed a fast way to regain user confidence and improve on-growing fears around AI usage among candidates.",
+        },
+      ],
+      image: { src: "", alt: "" },
+    },
+  ],
+  imageTexts: [
+    {
+      showTitle: false,
+      title: "",
+      sections: [
+        {
+          label: "GOALS AND EXPECTED OUTCOME",
+          items: [
+            "Increase trust in our online assessment despite fear of AI cheating",
+            "Release a solution that still respects candidates’ privacy and security during testing",
+            "Lean solution required - low of devs and cost",
+            "Reduce churn on customers using this paid test add-on (10% of our MRR)",
+            "Improve confidence in users before the beginning of grad-scheme season (september-november)",
+          ],
         },
       ],
       image: { src: "", alt: "" },
