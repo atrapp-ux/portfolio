@@ -998,6 +998,7 @@ body {
   background: #fff;
   border: 1px dashed #9b9b9b;
   border-radius: 14px;
+  container: project-stats / inline-size;
 }
 
 .project-stats-list {
@@ -1042,29 +1043,33 @@ body {
   }
 
   .project-stats-item {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 1 1 auto;
+    min-width: min-content;
     min-height: 121px;
     padding: 33px 16px 22px 45px;
   }
 
+  .project-stats-item dt {
+    white-space: nowrap;
+  }
+
   .project-stats-item:first-child {
-    flex: 202 1 0;
+    flex: 202 1 202px;
     padding-left: 49px;
   }
 
   .project-stats-item:nth-child(2) {
-    flex: 220 1 0;
+    flex: 220 1 220px;
     padding-left: 50px;
   }
 
   .project-stats-item:nth-child(3) {
-    flex: 189 1 0;
+    flex: 189 1 189px;
     padding-left: 45px;
   }
 
   .project-stats-item:nth-child(4) {
-    flex: 556 1 0;
+    flex: 556 1 556px;
     padding-left: 37px;
     padding-right: 32px;
   }
@@ -1077,6 +1082,13 @@ body {
     left: 0;
     width: 1px;
     background: repeating-linear-gradient(to bottom, #9b9b9b 0 5px, transparent 5px 10px);
+  }
+}
+
+/* Keep one line, and the 121px row, until the Figma copy no longer fits. */
+@container project-stats (min-width: 1042px) {
+  .project-stats-item {
+    min-width: max-content;
   }
 }
 
