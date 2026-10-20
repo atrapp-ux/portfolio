@@ -21,6 +21,9 @@
  * that bar. `imageTexts` is the image-and-text blocks under those.
  * Set `showTitle` to false, or leave `title` empty, to hide the header.
  * Leave `image.src` empty for the gray placeholder.
+ * `research` is the tabbed section under those blocks. Add a tab by
+ * appending to `tabs`. A tab can use `paragraphs` (with an optional
+ * `aside`) or `columns` (image, heading, and underlined leads).
  * `cta.href` is unused.
  */
 
@@ -67,6 +70,20 @@ type ProjectFields = {
     sections: { label: string; body?: string; items?: string[] }[];
     image: { src: string; alt: string };
   }[];
+  research: {
+    title: string;
+    tabs: {
+      id: string;
+      label: string;
+      paragraphs?: { lead?: string; text: string }[];
+      aside?: { src: string; alt: string };
+      columns?: {
+        image: { src: string; alt: string };
+        heading: string;
+        items: { lead: string; text: string }[];
+      }[];
+    }[];
+  };
   cta: { label: string; href: string };
 };
 
@@ -158,6 +175,77 @@ const projectTemplate: ProjectFields = {
       image: { src: "", alt: "" },
     },
   ],
+  research: {
+    title: "Research",
+    tabs: [
+      {
+        id: "desktop-research",
+        label: "Desktop research",
+        paragraphs: [
+          {
+            text: "Competitors relied heavily on screen recording online tests and using AI to determine AI usage on tests and answers.",
+          },
+          {
+            text: "Solutions were facial recognition, eye tracking, ID certification, recording user screens, and real time alerts for screen activity or suspicious movements and actions.",
+          },
+          {
+            text: "Other solutions focused less on tracking and more on deterring which aligned more with our values.",
+          },
+          {
+            lead: "Analogous solutions: ",
+            text: "Building Trust (tax signatures, ID snapshots), blocking triggers (Netflix blocking screenshots or screen recording), Action flags (“Looks like you’re using a VPN”)",
+          },
+        ],
+        aside: { src: "", alt: "" },
+      },
+      {
+        id: "user-interviews",
+        label: "User interviews",
+        columns: [
+          {
+            image: { src: "/research/tired-professional.png", alt: "" },
+            heading: "Hiring teams",
+            items: [
+              {
+                lead: "Overwhelmed",
+                text: " with high volume roles - candidate-dense pool",
+              },
+              {
+                lead: "Harder to select candidate",
+                text: " - Assessment scores higher than average",
+              },
+              {
+                lead: "Fear",
+                text: " that AI is masking real candidates’ skills and levels",
+              },
+              {
+                lead: "Overworked",
+                text: " - No time to verify all tests and answers and check AI usage",
+              },
+            ],
+          },
+          {
+            image: { src: "/research/stressed-candidate.png", alt: "" },
+            heading: "Candidates",
+            items: [
+              {
+                lead: "Tired",
+                text: " - applications becoming increasingly longer and requiring more work as the jobs become far and few between",
+              },
+              {
+                lead: "Fear",
+                text: " that AI will grade them rather than humans",
+              },
+              {
+                lead: "Mistrusting",
+                text: " - more platforms using surveillance and tracking, making applying more draining and scary",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
   cta: {
     label: "View Project",
     href: "",

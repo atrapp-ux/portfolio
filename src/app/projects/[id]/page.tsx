@@ -1,6 +1,7 @@
 import { projects } from "@content/project";
 import { ProjectStatsBar } from "@/components/project-stats-bar";
 import { ProjectImageTextBlock } from "@/components/project-image-text";
+import { ProjectResearch } from "@/components/project-research";
 import { ProjectTextImageBlock } from "@/components/project-text-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -38,6 +39,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       {project.imageTexts.map((block) => (
         <ProjectImageTextBlock block={block} key={block.sections[0]?.label ?? block.title} />
       ))}
+      <ProjectResearch research={project.research} />
     </main>
   );
 }
