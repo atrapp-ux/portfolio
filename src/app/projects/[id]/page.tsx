@@ -1,5 +1,6 @@
 import { projects } from "@content/project";
 import { ProjectStatsBar } from "@/components/project-stats-bar";
+import { ProjectTextImageBlock } from "@/components/project-text-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -30,6 +31,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         </div>
       </section>
       <ProjectStatsBar stats={project.stats} />
+      {project.textImages.map((block) => (
+        <ProjectTextImageBlock block={block} key={block.title} />
+      ))}
     </main>
   );
 }

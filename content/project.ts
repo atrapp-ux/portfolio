@@ -17,7 +17,9 @@
  * Button: `cta.label` is the words on the card button. Clicking it opens
  * `/projects/[id]`. `summary` is the quote on the card and on that page.
  * `eyebrow` is the grey line above the quote. `stats` is the facts bar
- * on the project page. `cta.href` is unused.
+ * on the project page. `textImages` is the text-and-image blocks under
+ * that bar. Leave `image.src` empty for the gray placeholder.
+ * `cta.href` is unused.
  */
 
 export const projectArrows = {
@@ -52,6 +54,11 @@ type ProjectFields = {
   image: ProjectImage;
   eyebrow: string;
   stats: { label: string; value: string }[];
+  textImages: {
+    title: string;
+    sections: { label: string; body: string }[];
+    image: { src: string; alt: string };
+  }[];
   cta: { label: string; href: string };
 };
 
@@ -107,6 +114,22 @@ const projectTemplate: ProjectFields = {
     { label: "WORKFLOW", value: "Agile, Skrum" },
     { label: "TIMELINE", value: "1.5 months" },
     { label: "TEAM STRUCTURE", value: "Prod. Manager, Tech Lead, Lead Designer, 4 devs" },
+  ],
+  textImages: [
+    {
+      title: "The Context.",
+      sections: [
+        {
+          label: "The Company",
+          body: "Online application/assessments platform to assess skills in potential candidates both fairly and without bias.",
+        },
+        {
+          label: "The Problem",
+          body: "With the candidate pools growing and the proliferation of access to AI tools, test score averages were increasing exponentially, causing hiring teams to fear cheating and lose confidence in our product. AI proofing was not an option as AI tools changed daily, but we needed a fast way to regain user confidence and improve on-growing fears around AI usage among candidates.",
+        },
+      ],
+      image: { src: "", alt: "" },
+    },
   ],
   cta: {
     label: "View Project",
