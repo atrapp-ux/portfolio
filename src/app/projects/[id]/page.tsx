@@ -1,6 +1,7 @@
 import { projects } from "@content/project";
 import { ProjectStatsBar } from "@/components/project-stats-bar";
 import { ProjectImageTextBlock } from "@/components/project-image-text";
+import { ProjectFullBleedImage } from "@/components/project-full-bleed-image";
 import { ProjectResearch } from "@/components/project-research";
 import { ProjectSolutionPieces } from "@/components/project-solution-pieces";
 import { ProjectTextImageBlock } from "@/components/project-text-image";
@@ -45,6 +46,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         <ProjectTextImageBlock block={block} key={block.title} />
       ))}
       <ProjectSolutionPieces section={project.solutionPieces} />
+      <ProjectFullBleedImage image={project.fullBleedImage} />
     </main>
   );
 }

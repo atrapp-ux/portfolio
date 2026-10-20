@@ -1616,3 +1616,28 @@ body {
   }
 }
 
+.full-bleed-image {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 1484 / 608;
+  max-height: 608px;
+  background: #efefef;
+  overflow: hidden;
+}
+
+.full-bleed-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.full-bleed-image:has(img)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 31, 48, 0.29);
+  pointer-events: none;
+}
+

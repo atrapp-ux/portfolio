@@ -28,6 +28,8 @@
  * `aside`) or `columns` (image, heading, and underlined leads).
  * `solutionPieces` is the three-column block under the later text-image
  * entries. Add a piece by appending to `pieces`.
+ * `fullBleedImage` is the edge-to-edge photo under that. Set `src` to a
+ * file in `public/`. Leave `src` empty for the gray placeholder.
  * `cta.href` is unused.
  */
 
@@ -78,6 +80,7 @@ type ProjectFields = {
     title: string;
     pieces: { label: string; body: string }[];
   };
+  fullBleedImage: { src: string; alt: string };
   research: {
     title: string;
     tabs: {
@@ -284,6 +287,10 @@ const projectTemplate: ProjectFields = {
         body: "Online application/assessments platform to assess skills in potential candidates both fairly and without bias.",
       },
     ],
+  },
+  fullBleedImage: {
+    src: "/full-bleed/image-holder.jpg",
+    alt: "Hands holding a seedling over dark soil",
   },
   cta: {
     label: "View Project",
