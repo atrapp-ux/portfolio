@@ -16,7 +16,8 @@
  *
  * Button: `cta.label` is the words on the card button. Clicking it opens
  * `/projects/[id]`. `summary` is the quote on the card and on that page.
- * `eyebrow` is the grey line above the quote. `cta.href` is unused.
+ * `eyebrow` is the grey line above the quote. `stats` is the facts bar
+ * on the project page. `cta.href` is unused.
  */
 
 export const projectArrows = {
@@ -50,6 +51,7 @@ type ProjectFields = {
   impacts: { title: string; body: string; arrow: ProjectArrow }[];
   image: ProjectImage;
   eyebrow: string;
+  stats: { label: string; value: string }[];
   cta: { label: string; href: string };
 };
 
@@ -100,6 +102,12 @@ const projectTemplate: ProjectFields = {
   ],
   image: slot(),
   eyebrow: "Lead product designer | Owned Research → Shipping | HR/ATS assessment platform",
+  stats: [
+    { label: "PRODUCT TPYE", value: "B2B SaaS" },
+    { label: "WORKFLOW", value: "Agile, Skrum" },
+    { label: "TIMELINE", value: "1.5 months" },
+    { label: "TEAM STRUCTURE", value: "Prod. Manager, Tech Lead, Lead Designer, 4 devs" },
+  ],
   cta: {
     label: "View Project",
     href: "",

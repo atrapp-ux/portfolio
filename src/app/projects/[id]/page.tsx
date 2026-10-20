@@ -1,4 +1,5 @@
 import { projects } from "@content/project";
+import { ProjectStatsBar } from "@/components/project-stats-bar";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -28,6 +29,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           </h1>
         </div>
       </section>
+      <ProjectStatsBar stats={project.stats} />
     </main>
   );
 }

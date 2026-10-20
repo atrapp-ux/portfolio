@@ -991,3 +991,128 @@ body {
   }
 }
 
+.project-stats {
+  box-sizing: border-box;
+  width: min(1167px, calc(100% - 32px));
+  margin: 36px auto 72px;
+  background: #fff;
+  border: 1px dashed #9b9b9b;
+  border-radius: 14px;
+}
+
+.project-stats-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.project-stats-item {
+  position: relative;
+  box-sizing: border-box;
+  padding: 22px 24px;
+}
+
+.project-stats-item dt {
+  margin: 0;
+  color: #517aff;
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.project-stats-item dd {
+  margin: 10px 0 0;
+  color: #000;
+  font-family: "SF Mono", "SFMono-Regular", var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.project-stats-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 91px;
+  height: 1px;
+  transform: translate(-50%, -50%);
+}
+
+.project-stats-divider img {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .project-stats-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .project-stats-item {
+    flex: 1 1 50%;
+    min-height: 108px;
+    padding: 28px 28px 28px 36px;
+  }
+
+  .project-stats-divider {
+    top: 50%;
+    left: 0;
+    width: 1px;
+    height: 91px;
+    transform: translateY(-50%);
+  }
+
+  .project-stats-divider img {
+    transform: rotate(90deg);
+  }
+
+  .project-stats-item:nth-child(odd) .project-stats-divider {
+    display: none;
+  }
+}
+
+@media (min-width: 1100px) {
+  .project-stats-list {
+    flex-wrap: nowrap;
+    min-height: 121px;
+  }
+
+  .project-stats-item {
+    flex: 0 0 auto;
+    min-height: 121px;
+    padding: 33px 16px 22px 45px;
+  }
+
+  .project-stats-item:first-child {
+    flex-basis: 202px;
+    padding-left: 49px;
+  }
+
+  .project-stats-item:nth-child(2) {
+    flex-basis: 220px;
+    padding-left: 50px;
+  }
+
+  .project-stats-item:nth-child(3) {
+    flex-basis: 189px;
+    padding-left: 45px;
+  }
+
+  .project-stats-item:nth-child(4) {
+    flex: 1 1 auto;
+    padding-left: 37px;
+    padding-right: 32px;
+  }
+
+  .project-stats-item:nth-child(odd) .project-stats-divider {
+    display: grid;
+  }
+
+  .project-stats-item:first-child .project-stats-divider {
+    display: none;
+  }
+}
+
