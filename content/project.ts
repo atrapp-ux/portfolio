@@ -176,7 +176,7 @@ const projectTemplate: ProjectFields = {
     },
   ],
   research: {
-    title: "Research",
+    title: "The Research.",
     tabs: [
       {
         id: "desktop-research",
