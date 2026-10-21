@@ -30,6 +30,8 @@
  * entries. Add a piece by appending to `pieces`.
  * `fullBleedImage` is the edge-to-edge photo under that. Set `src` to a
  * file in `public/`. Leave `src` empty for the gray placeholder.
+ * `threeImages` is the row of three image slots under that photo.
+ * The first slot is the wide one. Leave `src` empty for the gray placeholder.
  * `cta.href` is unused.
  */
 
@@ -81,6 +83,7 @@ type ProjectFields = {
     pieces: { label: string; body: string }[];
   };
   fullBleedImage: { src: string; alt: string };
+  threeImages: { src: string; alt: string }[];
   research: {
     title: string;
     tabs: {
@@ -292,6 +295,11 @@ const projectTemplate: ProjectFields = {
     src: "/full-bleed/image-holder.jpg",
     alt: "Hands holding a seedling over dark soil",
   },
+  threeImages: [
+    { src: "", alt: "" },
+    { src: "", alt: "" },
+    { src: "", alt: "" },
+  ],
   cta: {
     label: "View Project",
     href: "",
