@@ -32,6 +32,8 @@
  * file in `public/`. Leave `src` empty for the gray placeholder.
  * `threeImages` is the row of three image slots under that photo.
  * The first slot is the wide one. Leave `src` empty for the gray placeholder.
+ * `impactData` is the quote and stat row under those images. Add a stat
+ * by appending to `stats`.
  * `cta.href` is unused.
  */
 
@@ -84,6 +86,10 @@ type ProjectFields = {
   };
   fullBleedImage: { src: string; alt: string };
   threeImages: { src: string; alt: string }[];
+  impactData: {
+    quote: string;
+    stats: { value: string; label: string }[];
+  };
   research: {
     title: string;
     tabs: {
@@ -300,6 +306,18 @@ const projectTemplate: ProjectFields = {
     { src: "", alt: "" },
     { src: "", alt: "" },
   ],
+  impactData: {
+    quote:
+      "Increasing trust in our USP through online testing surveillance amidst an AI cheating fear across assessment platforms",
+    stats: [
+      { value: "-15%", label: "decrease in average test scores after release" },
+      { value: "+10%", label: "increase in candidate experience post-testing" },
+      {
+        value: "+22%",
+        label: "increase in MRR from test renewals and add-ons from new users",
+      },
+    ],
+  },
   cta: {
     label: "View Project",
     href: "",
