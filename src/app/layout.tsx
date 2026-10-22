@@ -5,7 +5,7 @@ import "./globals.css";
 
 const display = Google_Sans_Flex({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "400",
   variable: "--font-display",
   display: "swap",
 });
