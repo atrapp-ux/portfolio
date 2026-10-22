@@ -34,6 +34,9 @@
  * The first slot is the wide one. Leave `src` empty for the gray placeholder.
  * `impactData` is the quote and stat row under those images. Add a stat
  * by appending to `stats`.
+ * `quotes` is the quote blocks under that row, in order. `variant` is
+ * `photo_quote`, `single`, or `multi`. Leave a photo `src` empty for the
+ * gray circle. Add another column to `multi` by appending to `items`.
  * `cta.href` is unused.
  */
 
@@ -90,6 +93,23 @@ type ProjectFields = {
     quote: string;
     stats: { value: string; label: string }[];
   };
+  quotes: (
+    | {
+        variant: "photo_quote";
+        quote: string;
+        attribution: string;
+        image: { src: string; alt: string };
+      }
+    | {
+        variant: "single";
+        quote: string;
+        attribution: string;
+      }
+    | {
+        variant: "multi";
+        items: { quote: string; attribution: string }[];
+      }
+  )[];
   research: {
     title: string;
     tabs: {
@@ -318,6 +338,36 @@ const projectTemplate: ProjectFields = {
       },
     ],
   },
+  quotes: [
+    {
+      variant: "photo_quote",
+      quote:
+        "“Increasing trust in our USP through online testing surveillance amidst an AI cheating fear for online assessments”",
+      attribution: "- Candidate Name, Post-rejection, 2026",
+      image: { src: "", alt: "" },
+    },
+    {
+      variant: "single",
+      quote:
+        "“Increasing trust in our USP through online testing surveillance amidst an AI cheating fear for online assessments”",
+      attribution: "- Candidate Name, Post-rejection, 2026",
+    },
+    {
+      variant: "multi",
+      items: [
+        {
+          quote:
+            "“Increasing trust in our USP through online testing surveillance amidst an AI cheating fear for online assessments”",
+          attribution: "- Candidate Name, Post-rejection, 2026",
+        },
+        {
+          quote:
+            "“Increasing trust in our USP through online testing surveillance amidst an AI cheating fear for online assessments”",
+          attribution: "- Candidate Name, Post-rejection, 2026",
+        },
+      ],
+    },
+  ],
   cta: {
     label: "View Project",
     href: "",

@@ -3,6 +3,7 @@ import { ProjectStatsBar } from "@/components/project-stats-bar";
 import { ProjectImageTextBlock } from "@/components/project-image-text";
 import { ProjectFullBleedImage } from "@/components/project-full-bleed-image";
 import { ProjectImpactData } from "@/components/project-impact-data";
+import { ProjectQuote } from "@/components/project-quote";
 import { ProjectThreeImages } from "@/components/project-three-images";
 import { ProjectResearch } from "@/components/project-research";
 import { ProjectSolutionPieces } from "@/components/project-solution-pieces";
@@ -51,6 +52,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       <ProjectFullBleedImage image={project.fullBleedImage} />
       <ProjectThreeImages images={project.threeImages} />
       <ProjectImpactData impact={project.impactData} />
+      {project.quotes.map((quote) => (
+        <ProjectQuote quote={quote} key={quote.variant} />
+      ))}
     </main>
   );
 }
