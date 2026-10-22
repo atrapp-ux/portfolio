@@ -1816,12 +1816,18 @@ body {
 
 .project-quote {
   box-sizing: border-box;
-  width: min(1280px, calc(100% - 32px));
-  margin: 0 auto 80px;
+  width: 100%;
+  margin: 0 0 80px;
   background: #fff;
   color: #000;
   font-family: var(--font-quote), "Goudy Bookletter 1911", Palatino, "Palatino Linotype", serif;
   text-align: center;
+}
+
+.project-quote-inner {
+  box-sizing: border-box;
+  width: min(1280px, 100%);
+  margin: 0 auto;
 }
 
 .project-quote blockquote {
@@ -1850,7 +1856,7 @@ body {
   font-size: clamp(14px, calc(14px + (100vw - 402px) * 6 / 878), 20px);
 }
 
-.project-quote[data-variant="photo_quote"] {
+.project-quote[data-variant="photo_quote"] .project-quote-inner {
   padding: clamp(20px, calc(20px + (100vw - 402px) * 12 / 878), 32px) 24px
     clamp(48px, calc(48px + (100vw - 402px) * 40 / 878), 88px);
 }
@@ -1875,12 +1881,12 @@ body {
   margin-top: clamp(12px, calc(12px + (100vw - 402px) * 8 / 878), 20px);
 }
 
-.project-quote[data-variant="single"] {
+.project-quote[data-variant="single"] .project-quote-inner {
   padding: clamp(48px, calc(48px + (100vw - 402px) * 40 / 878), 88px) 24px
     clamp(40px, calc(40px + (100vw - 402px) * 32 / 878), 72px);
 }
 
-.project-quote[data-variant="multi"] {
+.project-quote[data-variant="multi"] .project-quote-inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   column-gap: clamp(28px, calc(28px + (100vw - 402px) * 88 / 878), 116px);
@@ -1915,13 +1921,13 @@ body {
     margin-bottom: 48px;
   }
 
-  .project-quote[data-variant="photo_quote"],
-  .project-quote[data-variant="single"] {
+  .project-quote[data-variant="photo_quote"] .project-quote-inner,
+  .project-quote[data-variant="single"] .project-quote-inner {
     padding-right: 16px;
     padding-left: 16px;
   }
 
-  .project-quote[data-variant="multi"] {
+  .project-quote[data-variant="multi"] .project-quote-inner {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 40px;
     padding-right: 16px;
