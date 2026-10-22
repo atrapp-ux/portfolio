@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import { Google_Sans_Flex, Goudy_Bookletter_1911, IBM_Plex_Mono } from "next/font/google";
+import { Goudy_Bookletter_1911, IBM_Plex_Mono } from "next/font/google";
 import { homeContent } from "@content/home";
 import "./globals.css";
-
-const display = Google_Sans_Flex({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-display",
-  display: "swap",
-});
 
 const mono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -31,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable} ${quote.variable} h-full`}>
+    <html lang="en" className={`${mono.variable} ${quote.variable} h-full`}>
       <body className="min-h-full antialiased">{children}</body>
     </html>
   );
