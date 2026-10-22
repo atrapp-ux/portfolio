@@ -132,7 +132,7 @@ export type ProjectCardContent = ProjectFields & {
   layout: ProjectLayout;
 };
 
-const slot = (label = "IMAGE PLACEHOLDER"): ProjectImage => ({
+const slot = (label = "Image placeholder"): ProjectImage => ({
   src: "",
   alt: "",
   label,
@@ -143,18 +143,18 @@ const projectTemplate: ProjectFields = {
   summary:
     "Increasing hiring team’s confidence in online testing in a world of AI while improving candidate experience to encourage authentic work.",
   problem: {
-    label: "PROBLEM",
+    label: "Problem",
     body: "Hiring managers saw a large increase in high scores for our online test, fearing AI cheating was behind it. This test feature made up 10% of our MRR and skill-based testing was a main USP.",
   },
   timeline: {
-    label: "TIMELINE",
+    label: "Timeline",
     body: "1.5\nmonths",
   },
   platform: {
-    label: "PLATFORM",
+    label: "Platform",
     body: "Desktop\nMobile",
   },
-  impactLabel: "SOLUTION IMPACT",
+  impactLabel: "Solution impact",
   impacts: [
     {
       title: "Built user trust",
@@ -175,10 +175,10 @@ const projectTemplate: ProjectFields = {
   image: slot(),
   eyebrow: "Lead product designer | Owned Research → Shipping | HR/ATS assessment platform",
   stats: [
-    { label: "PRODUCT TPYE", value: "B2B SaaS" },
-    { label: "WORKFLOW", value: "Agile, Skrum" },
-    { label: "TIMELINE", value: "1.5 months" },
-    { label: "TEAM STRUCTURE", value: "Prod. Manager, Tech Lead, Lead Designer, 4 devs" },
+    { label: "Product tpye", value: "B2B SaaS" },
+    { label: "Workflow", value: "Agile, Skrum" },
+    { label: "Timeline", value: "1.5 months" },
+    { label: "Team structure", value: "Prod. Manager, Tech Lead, Lead Designer, 4 devs" },
   ],
   textImages: [
     {
@@ -216,7 +216,7 @@ const projectTemplate: ProjectFields = {
       title: "",
       sections: [
         {
-          label: "GOALS AND EXPECTED OUTCOME",
+          label: "Goals and expected outcome",
           items: [
             "Increase trust in our online assessment despite fear of AI cheating",
             "Release a solution that still respects candidates’ privacy and security during testing",

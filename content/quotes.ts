@@ -7,7 +7,7 @@
  */
 
 export const quoteContent = {
-  label: "MY GOAL AS A DESIGNER",
+  label: "My goal as a designer",
   before: "Making the technology ",
   accent: "invisible",
   after:
