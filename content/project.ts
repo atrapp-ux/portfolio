@@ -412,6 +412,11 @@ function projectEntry(
 export const projects: ProjectCardContent[] = [
   projectEntry("project-1", "imageRight", {
     title: "Candidate application that cares",
+    image: {
+      src: "/project-card/candidate-application.png",
+      alt: "Candidate application screen",
+      label: "Image placeholder",
+    },
     blurb:
       "Giving candidates a good end to end application experience during a classically painful, long, and repetitive process of job hunting while ensuring a fair and easy experience.",
     problem: {
