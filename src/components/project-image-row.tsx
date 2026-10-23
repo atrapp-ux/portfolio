@@ -54,11 +54,12 @@ export function ProjectImageRow({ images }: { images: ProjectImageRowItem[] }) {
           <button
             ref={closeRef}
             type="button"
-            className="image-row-close"
+            className="project-home image-row-close"
             aria-label="Close"
             onClick={() => setOpen(null)}
           >
-            x
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/image-row/close.svg" alt="" width={24} height={24} />
           </button>
           <p id={titleId} className="image-row-modal-title">
             {selected.alt || "Enlarged image"}

@@ -1991,31 +1991,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 72px 24px 24px;
+  padding: 90px 24px 24px;
   background: rgba(17, 17, 17, 0.92);
 }
 
 .image-row-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 48px;
-  height: 48px;
-  margin: 0;
-  padding: 0;
+  top: 24px;
+  right: 24px;
+  left: auto;
+  width: auto;
   border: 0;
-  background: transparent;
-  color: #fff;
-  font-family: var(--font-display), "Google Sans Flex", "Google Sans", Arial, sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1;
   cursor: pointer;
-}
-
-.image-row-close:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
 }
 
 .image-row-modal-title {
@@ -2031,7 +2017,7 @@ body {
 }
 
 .image-row-modal-frame {
-  width: min(92vw, calc((100vh - 96px) * 722 / 1433));
+  width: min(92vw, calc((100vh - 114px) * 722 / 1433));
   aspect-ratio: 722 / 1433;
   border-radius: 52px;
   background: #8e8e8e;
@@ -2040,33 +2026,20 @@ body {
 
 @media (max-width: 402px) {
   .image-row {
-    width: 100%;
-    margin: 8px 0 56px;
+    width: calc(100% - 32px);
+    margin: 8px auto 56px;
   }
 
   .image-row-track {
     display: flex;
+    flex-direction: column;
     gap: 16px;
-    padding-inline: 16px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 16px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .image-row-track::-webkit-scrollbar {
-    display: none;
+    overflow: visible;
   }
 
   .image-row-slide {
     display: block;
-    flex: 0 0 100%;
-    box-sizing: border-box;
-    padding: 0;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
+    width: 100%;
     container-type: inline-size;
   }
 
