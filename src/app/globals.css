@@ -1877,7 +1877,7 @@ body {
 .impact-data-stat dt {
   margin: 0;
   color: #0055ff;
-  font-family: var(--font-display), "Google Sans Flex", "Google Sans", Arial, sans-serif;
+  font-family: var(--font-quote), "Goudy Bookletter 1911", Palatino, "Palatino Linotype", serif;
   font-size: clamp(28px, calc(28px + (100vw - 402px) * 22 / 878), 50px);
   font-weight: 400;
   line-height: 1.3;
