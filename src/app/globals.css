@@ -550,6 +550,10 @@ body {
   list-style: none;
 }
 
+.project-impacts:has(li:only-child) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .project-impacts h3 {
   margin: 0;
   color: var(--ink);

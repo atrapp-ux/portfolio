@@ -407,7 +407,28 @@ function projectEntry(
 }
 
 export const projects: ProjectCardContent[] = [
-  projectEntry("project-1", "imageRight"),
+  projectEntry("project-1", "imageRight", {
+    title: "Candidate application that cares",
+    problem: {
+      label: "Problem",
+      body: "In 2024 the job market flooded with candidates while openings shrank. Candidates were exhausted, ghosted, and left guessing where they stood. Hiring teams were buried in applications and questions, and worried they couldn’t offer a fair experience at that scale.",
+    },
+    timeline: {
+      label: "Timeline",
+      body: "1 month design, 2 weeks build",
+    },
+    platform: {
+      label: "Platform",
+      body: "Desktop, Mobile",
+    },
+    impacts: [
+      {
+        title: "Candidate Ratings",
+        body: "Candidate ratings post-application and post rejection increased by 10%, with ratings now generally averaging an 8.6 compared to before (avg. 7.3)",
+        arrow: "up",
+      },
+    ],
+  }),
   projectEntry("project-2", "imageLeft"),
   projectEntry("project-3", "imageRight"),
   projectEntry("project-4", "imageLeft"),
