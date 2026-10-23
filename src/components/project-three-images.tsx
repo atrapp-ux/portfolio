@@ -1,3 +1,5 @@
+import { publicAsset } from "@/lib/public-asset";
+
 export type ProjectThreeImage = {
   src: string;
   alt: string;
@@ -11,7 +13,7 @@ export function ProjectThreeImages({ images }: { images: ProjectThreeImage[] }) 
           <figure className="three-images-slot" key={index}>
             {image.src ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={image.src} alt={image.alt} />
+              <img src={publicAsset(image.src)} alt={image.alt} />
             ) : null}
           </figure>
         ))}

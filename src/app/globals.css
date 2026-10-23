@@ -964,7 +964,7 @@ body {
   width: 100%;
   aspect-ratio: 1280 / 464;
   max-height: 464px;
-  background-image: url("/project-hero-gradient.jpg");
+  background-image: var(--project-hero-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;

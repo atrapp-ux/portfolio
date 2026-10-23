@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projectArrows, projects, type ProjectArrow, type ProjectCardContent } from "@content/project";
+import { publicAsset } from "@/lib/public-asset";
 
 function Rule({ placement = "section" }: { placement?: "section" | "split" }) {
   const slim = placement === "split";
@@ -8,7 +9,7 @@ function Rule({ placement = "section" }: { placement?: "section" | "split" }) {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       className={slim ? "project-rule project-rule-split" : "project-rule"}
-      src={slim ? "/project-card/rule-horizontal-slim.svg" : "/project-card/rule-horizontal.svg"}
+      src={publicAsset(slim ? "/project-card/rule-horizontal-slim.svg" : "/project-card/rule-horizontal.svg")}
       alt=""
       width={slim ? 645 : 734}
       height={1}
@@ -20,11 +21,11 @@ function VerticalRule({ kind }: { kind: "pair" | "split" }) {
   return (
     <span className={`project-rule-v project-rule-v-${kind}`} aria-hidden="true">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="project-rule-v-long" src="/project-card/rule-vertical.svg" alt="" width={148} height={1} />
+      <img className="project-rule-v-long" src={publicAsset("/project-card/rule-vertical.svg")} alt="" width={148} height={1} />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className="project-rule-v-short"
-        src="/project-card/rule-vertical-short.svg"
+        src={publicAsset("/project-card/rule-vertical-short.svg")}
         alt=""
         width={68}
         height={1}
@@ -42,7 +43,7 @@ function ImpactArrow({ name }: { name: ProjectArrow }) {
       style={{ ["--arrow-rotation" as string]: `${arrow.rotation}deg` }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={arrow.src} alt="" width={21} height={16} />
+      <img src={publicAsset(arrow.src)} alt="" width={21} height={16} />
     </span>
   );
 }
@@ -61,7 +62,7 @@ function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
           <div className="project-slot">
             {card.image.src ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={card.image.src} alt={card.image.alt} />
+              <img src={publicAsset(card.image.src)} alt={card.image.alt} />
             ) : (
               <p>{card.image.label}</p>
             )}
@@ -107,7 +108,7 @@ function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
             <Link className="project-cta" href={`/projects/${card.id}`}>
               <span>{card.cta.label}</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/project-card/cta-arrow.svg" alt="" width={25.8583} height={28.4193} />
+              <img src={publicAsset("/project-card/cta-arrow.svg")} alt="" width={25.8583} height={28.4193} />
             </Link>
           </div>
         </div>

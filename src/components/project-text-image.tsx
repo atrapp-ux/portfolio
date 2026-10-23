@@ -1,3 +1,5 @@
+import { publicAsset } from "@/lib/public-asset";
+
 export type ProjectTextImageSection = {
   label: string;
   body: string;
@@ -28,7 +30,7 @@ export function ProjectTextImageBlock({ block }: { block: ProjectTextImage }) {
       <figure className="text-img-media">
         {block.image.src ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={block.image.src} alt={block.image.alt} />
+          <img src={publicAsset(block.image.src)} alt={block.image.alt} />
         ) : null}
       </figure>
     </section>

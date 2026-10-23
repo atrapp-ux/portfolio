@@ -11,6 +11,7 @@ import { ProjectSolutionPieces } from "@/components/project-solution-pieces";
 import { ProjectTextImageBlock } from "@/components/project-text-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { publicAsset } from "@/lib/public-asset";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ id: project.id }));
@@ -23,10 +24,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
   return (
     <main className="project-page">
-      <header className="project-hero">
+      <header
+        className="project-hero"
+        style={{ ["--project-hero-image" as string]: `url("${publicAsset("/project-hero-gradient.jpg")}")` }}
+      >
         <Link className="project-home" href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/project-home.svg" alt="" width={24} height={24} />
+          <img src={publicAsset("/project-home.svg")} alt="" width={24} height={24} />
           Home
         </Link>
       </header>

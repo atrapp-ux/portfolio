@@ -13,7 +13,13 @@ npm install
 npm run dev
 ```
 
-The dev server listens on [http://127.0.0.1:43123](http://127.0.0.1:43123).
+The dev server listens on [http://127.0.0.1:43123](http://127.0.0.1:43123). Local preview is served from the site root, without a `/portfolio` prefix.
+
+## GitHub Pages
+
+The public site is [https://atrapp-ux.github.io/portfolio/](https://atrapp-ux.github.io/portfolio/).
+
+Pushes to `main` build a static export with `GITHUB_PAGES=true` (so assets are prefixed with `/portfolio`) and deploy the `out/` folder with GitHub Actions. In the repo, set **Settings → Pages → Source** to **GitHub Actions**.
 
 ## Layout
 

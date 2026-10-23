@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { publicAsset } from "@/lib/public-asset";
 
 export type ProjectImageRowItem = {
   src: string;
@@ -42,7 +43,7 @@ export function ProjectImageRow({ images }: { images: ProjectImageRowItem[] }) {
               >
                 {image.src ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={image.src} alt="" />
+                  <img src={publicAsset(image.src)} alt="" />
                 ) : null}
               </button>
             </div>
@@ -59,7 +60,7 @@ export function ProjectImageRow({ images }: { images: ProjectImageRowItem[] }) {
             onClick={() => setOpen(null)}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/image-row/close.svg" alt="" width={24} height={24} />
+            <img src={publicAsset("/image-row/close.svg")} alt="" width={24} height={24} />
           </button>
           <p id={titleId} className="image-row-modal-title">
             {selected.alt || "Enlarged image"}
@@ -67,7 +68,7 @@ export function ProjectImageRow({ images }: { images: ProjectImageRowItem[] }) {
           <div className="image-row-modal-frame">
             {selected.src ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={selected.src} alt={selected.alt} />
+              <img src={publicAsset(selected.src)} alt={selected.alt} />
             ) : null}
           </div>
         </div>

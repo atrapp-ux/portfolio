@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useId, useState, type KeyboardEvent } from "react";
+import { publicAsset } from "@/lib/public-asset";
 
 export type ResearchParagraph = {
   lead?: string;
@@ -97,7 +98,7 @@ export function ProjectResearch({ research }: { research: ProjectResearchContent
               <figure className="research-aside">
                 {tab.aside.src ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={tab.aside.src} alt={tab.aside.alt} />
+                  <img src={publicAsset(tab.aside.src)} alt={tab.aside.alt} />
                 ) : null}
               </figure>
             ) : null}
@@ -110,14 +111,14 @@ export function ProjectResearch({ research }: { research: ProjectResearchContent
                 {index > 0 ? (
                   <div className="research-rule" aria-hidden="true">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/research/column-divider.svg" alt="" width={311} height={1} />
+                    <img src={publicAsset("/research/column-divider.svg")} alt="" width={311} height={1} />
                   </div>
                 ) : null}
                 <article className="research-column">
                   {column.image.src ? (
                     <figure className="research-portrait">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={column.image.src} alt={column.image.alt} width={83} height={83} />
+                      <img src={publicAsset(column.image.src)} alt={column.image.alt} width={83} height={83} />
                     </figure>
                   ) : null}
                   <h3 className="research-heading">{column.heading}</h3>

@@ -1,3 +1,5 @@
+import { publicAsset } from "@/lib/public-asset";
+
 export type QuoteItem = {
   quote: string;
   attribution: string;
@@ -48,7 +50,7 @@ export function ProjectQuote({ quote }: { quote: ProjectQuoteContent }) {
           <div className="project-quote-photo">
             {quote.image.src ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={quote.image.src} alt={quote.image.alt} />
+              <img src={publicAsset(quote.image.src)} alt={quote.image.alt} />
             ) : null}
           </div>
         ) : null}
