@@ -37,6 +37,8 @@
  * `quotes` is the quote blocks under that row, in order. `variant` is
  * `photo_quote`, `single`, or `multi`. Leave a photo `src` empty for the
  * gray circle. Add another column to `multi` by appending to `items`.
+ * `imageRow` is the equal three-image row under the quote blocks.
+ * Leave `src` empty for the gray placeholder. Clicking a slot opens it.
  * `cta.href` is unused.
  */
 
@@ -110,6 +112,7 @@ type ProjectFields = {
         items: { quote: string; attribution: string }[];
       }
   )[];
+  imageRow: { src: string; alt: string }[];
   research: {
     title: string;
     tabs: {
@@ -367,6 +370,11 @@ const projectTemplate: ProjectFields = {
         },
       ],
     },
+  ],
+  imageRow: [
+    { src: "", alt: "" },
+    { src: "", alt: "" },
+    { src: "", alt: "" },
   ],
   cta: {
     label: "View Project",
