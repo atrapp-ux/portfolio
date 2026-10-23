@@ -903,8 +903,16 @@ body {
 }
 
 @media (max-width: 767px) {
+  #project-1 .project-art {
+    aspect-ratio: 754 / 480;
+  }
+
   #project-1 .project-stage {
-    background: #d4e2fb;
+    left: 0;
+    right: 0;
+    height: calc(100% + 64px);
+    background: linear-gradient(180deg, #e7efff 0%, #c5d6fb 46%, #7ea6f4 100%);
+    border: 0;
   }
 
   #project-1 .project-slot {
