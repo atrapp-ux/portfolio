@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${display.variable} ${quote.variable} h-full`}
       style={{
-        ["--cursor-hand" as string]: `url("${publicAsset("/cursors/pointing-hand.png")}") 14 1, pointer`,
+        ["--cursor-hand" as string]: `url("${publicAsset("/cursors/pointing-hand.png")}") 11 0, pointer`,
       }}
     >
       <body className="min-h-full antialiased">{children}</body>
