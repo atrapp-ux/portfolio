@@ -55,7 +55,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       ))}
       <ProjectSolutionPieces section={project.solutionPieces} />
       <ProjectFullBleedImage image={project.fullBleedImage} />
-      <ProjectThreeImages images={project.threeImages} />
+      {project.id === "project-1" ? null : <ProjectThreeImages images={project.threeImages} />}
       <ProjectImpactData impact={project.impactData} />
       {project.quotes.map((quote) => (
         <ProjectQuote quote={quote} key={quote.variant} />
