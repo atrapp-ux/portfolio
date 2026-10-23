@@ -440,20 +440,6 @@ body {
   transform: scale(calc(min(1323px, calc(100cqi - 32px)) / 1323px));
 }
 
-@media (min-width: 768px) {
-  #project-1.project-fit {
-    height: calc(830 * min(1323px, calc(100cqi - 32px)) / 1323);
-  }
-
-  #project-1 .project-frame {
-    height: 830px;
-  }
-
-  #project-1 .project-panel {
-    height: 754px;
-  }
-}
-
 .project-art {
   display: contents;
 }
@@ -646,21 +632,6 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 27px;
-}
-
-#project-1 .project-slot {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  overflow: visible;
-  padding: 16px 12px 20px;
-}
-
-#project-1 .project-slot img {
-  object-fit: contain;
-  object-position: center;
-  border-radius: 0;
-  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.2));
 }
 
 .project-cta-row {
@@ -909,6 +880,353 @@ body {
 
   .project-cta-row {
     position: static;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 36px;
+  }
+}
+
+/* Card 1 keeps the scaled side-by-side frame through tablet.
+   The shared rules above still stack cards 2–4 at 767px. */
+#project-1.project-fit {
+  width: min(1323px, calc(100cqi - 32px));
+  height: calc(910 * min(1323px, calc(100cqi - 32px)) / 1323);
+  overflow: hidden;
+}
+
+#project-1 .project-frame {
+  width: 1323px;
+  height: 910px;
+  transform-origin: top left;
+  transform: scale(calc(min(1323px, calc(100cqi - 32px)) / 1323px));
+}
+
+#project-1 .project-art {
+  display: contents;
+}
+
+#project-1 .project-stage {
+  display: block;
+  position: absolute;
+  left: 824px;
+  right: auto;
+  top: 0;
+  bottom: auto;
+  z-index: 1;
+  width: 488px;
+  height: 888px;
+  background: url("/project-card/card-1-preview-bg.jpg") center / cover no-repeat;
+  border: 0;
+  border-radius: 48px;
+  box-shadow: none;
+  transform: none;
+}
+
+#project-1 .project-slot {
+  position: absolute;
+  left: 824px;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  width: 488px;
+  height: 888px;
+  aspect-ratio: auto;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+#project-1 .project-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.22));
+}
+
+#project-1 .project-panel {
+  position: absolute;
+  z-index: auto;
+  left: 10px;
+  top: 60px;
+  width: 1188px;
+  height: 754px;
+  margin-top: 0;
+  padding: 55px 387px 40px 55px;
+  background: rgba(255, 255, 255, 0.78);
+  border-width: 0.8px;
+}
+
+#project-1 .project-title {
+  max-width: 513px;
+  width: auto;
+  font-size: 32px;
+}
+
+#project-1 .project-summary {
+  max-width: 746px;
+  width: auto;
+  font-size: 16px;
+}
+
+#project-1 .project-meta,
+#project-1 .project-impacts,
+#project-1 .project-meta-body {
+  max-width: none;
+}
+
+#project-1 .project-meta {
+  display: grid;
+  grid-template-columns: 390px 24px 140px 28px 150px;
+  align-items: start;
+  width: 746px;
+  margin-top: 16px;
+  row-gap: normal;
+  column-gap: normal;
+}
+
+#project-1 .project-meta-body {
+  width: auto;
+  max-width: 395px;
+  font-size: 16px;
+}
+
+#project-1 .project-problem,
+#project-1 .project-timeline,
+#project-1 .project-platform,
+#project-1 .project-rule-split,
+#project-1 .project-rule-v-split {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+#project-1 .project-rule {
+  width: auto;
+  height: auto;
+  margin: 28px 0 0;
+}
+
+#project-1 .project-rule-v-pair {
+  display: block;
+}
+
+#project-1 .project-rule-split {
+  display: none;
+}
+
+#project-1 .project-rule-v-split {
+  align-self: stretch;
+  height: auto;
+  margin: 0;
+}
+
+#project-1 .project-impact-label {
+  margin-top: 28px;
+}
+
+#project-1 .project-impacts {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  width: 746px;
+  margin: 18px 0 0;
+}
+
+#project-1 .project-kicker {
+  font-size: 16px;
+}
+
+#project-1 .project-impacts h3 {
+  font-size: 24px;
+}
+
+#project-1 .project-impact-copy p {
+  font-size: 16px;
+}
+
+#project-1 .project-arrow {
+  position: static;
+  width: 16px;
+  height: 21px;
+}
+
+#project-1 .project-arrow img {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: rotate(var(--arrow-rotation));
+}
+
+#project-1 .project-cta-row {
+  position: absolute;
+  right: 387px;
+  bottom: 36px;
+  display: block;
+  justify-content: normal;
+  margin-top: 0;
+}
+
+@media (max-width: 402px) {
+  #project-1.project-fit {
+    width: min(754px, calc(100% - 32px));
+    height: auto;
+    overflow: visible;
+  }
+
+  #project-1 .project-frame {
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+
+  #project-1 .project-art {
+    display: flex;
+    position: relative;
+    z-index: 3;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+  #project-1 .project-stage {
+    left: 10%;
+    right: 10%;
+    top: 0;
+    width: auto;
+    height: calc(100% + 48px);
+    z-index: 1;
+    border-radius: 32px;
+  }
+
+  #project-1 .project-slot {
+    position: relative;
+    left: auto;
+    top: auto;
+    z-index: 2;
+    width: 74%;
+    height: auto;
+    aspect-ratio: 1764 / 3209;
+    margin: 0 auto -68px;
+  }
+
+  #project-1 .project-panel {
+    position: relative;
+    z-index: 2;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    padding: 96px clamp(20px, 7.43%, 56px) 40px;
+    background: #fcfcfc;
+    border-width: 0.799px;
+  }
+
+  #project-1 .project-title,
+  #project-1 .project-summary,
+  #project-1 .project-meta,
+  #project-1 .project-impacts,
+  #project-1 .project-meta-body {
+    max-width: none;
+    width: 100%;
+  }
+
+  #project-1 .project-rule {
+    width: 100%;
+    height: 1px;
+    margin-top: 24px;
+  }
+
+  #project-1 .project-meta {
+    grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+    row-gap: 20px;
+    column-gap: 12px;
+    margin-top: 18px;
+  }
+
+  #project-1 .project-problem {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  #project-1 .project-rule-v-pair {
+    display: none;
+  }
+
+  #project-1 .project-timeline {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #project-1 .project-platform {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  #project-1 .project-rule-split {
+    display: block;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    height: 1px;
+    margin: 4px 0 0;
+  }
+
+  #project-1 .project-rule-v-split {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: stretch;
+    height: auto;
+    margin: 0;
+  }
+
+  #project-1 .project-impact-label {
+    margin-top: 22px;
+  }
+
+  #project-1 .project-impacts {
+    gap: 16px 12px;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  #project-1 .project-title {
+    font-size: 22px;
+  }
+
+  #project-1 .project-summary,
+  #project-1 .project-meta-body,
+  #project-1 .project-impact-copy p {
+    font-size: 12px;
+  }
+
+  #project-1 .project-kicker {
+    font-size: 14px;
+  }
+
+  #project-1 .project-impacts h3 {
+    font-size: 20px;
+  }
+
+  #project-1 .project-arrow {
+    position: relative;
+    width: 9px;
+    height: 12px;
+  }
+
+  #project-1 .project-arrow img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(var(--arrow-rotation)) scale(0.57);
+  }
+
+  #project-1 .project-cta-row {
+    position: static;
+    right: auto;
+    bottom: auto;
     display: flex;
     justify-content: flex-end;
     margin-top: 36px;

@@ -413,7 +413,7 @@ export const projects: ProjectCardContent[] = [
   projectEntry("project-1", "imageRight", {
     title: "Candidate application that cares",
     image: {
-      src: "/project-card/candidate-application.png",
+      src: "/project-card/card-1-phone.png",
       alt: "Candidate application screen",
       label: "Image placeholder",
     },
