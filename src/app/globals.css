@@ -948,6 +948,14 @@ body {
     aspect-ratio: 1764 / 3209;
     padding: 0;
   }
+
+  #project-1 .project-slot-link {
+    align-items: flex-start;
+  }
+
+  #project-1 .project-slot img {
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 768px) {
