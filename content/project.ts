@@ -16,6 +16,8 @@
  *
  * Button: `cta.label` is the words on the card button. Clicking it opens
  * `/projects/[id]`. `summary` is the quote on the card and on that page.
+ * Set `blurb` to replace the card line under the title without changing
+ * the project page quote.
  * `eyebrow` is the grey line above the quote. `stats` is the facts bar
  * on the project page. `textImages` is the text-and-image blocks.
  * The first entry sits under the stats bar. Later entries use the same
@@ -68,6 +70,7 @@ export type ProjectImage = {
 type ProjectFields = {
   title: string;
   summary: string;
+  blurb?: string;
   problem: { label: string; body: string };
   timeline: { label: string; body: string };
   platform: { label: string; body: string };
@@ -409,6 +412,8 @@ function projectEntry(
 export const projects: ProjectCardContent[] = [
   projectEntry("project-1", "imageRight", {
     title: "Candidate application that cares",
+    blurb:
+      "Giving candidates a good end to end application experience during a classically painful, long, and repetitive process of job hunting while ensuring a fair and easy experience.",
     problem: {
       label: "Problem",
       body: "In 2024 the job market flooded with candidates while openings shrank. Candidates were exhausted, ghosted, and left guessing where they stood. Hiring teams were buried in applications and questions, and worried they couldn’t offer a fair experience at that scale.",
@@ -426,6 +431,11 @@ export const projects: ProjectCardContent[] = [
         title: "Candidate Ratings",
         body: "Candidate ratings post-application and post rejection increased by 10%, with ratings now generally averaging an 8.6 compared to before (avg. 7.3)",
         arrow: "up",
+      },
+      {
+        title: "Reduction in support tickets",
+        body: "Massive reduction in support time and cost dedicated to questions from candidates about job fit, requirements, and test accommodations. Tickets dropped from 100+ a month to about 20 average per month",
+        arrow: "down",
       },
     ],
   }),

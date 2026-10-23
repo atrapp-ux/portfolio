@@ -440,6 +440,20 @@ body {
   transform: scale(calc(min(1323px, calc(100cqi - 32px)) / 1323px));
 }
 
+@media (min-width: 768px) {
+  #project-1.project-fit {
+    height: calc(830 * min(1323px, calc(100cqi - 32px)) / 1323);
+  }
+
+  #project-1 .project-frame {
+    height: 830px;
+  }
+
+  #project-1 .project-panel {
+    height: 754px;
+  }
+}
+
 .project-art {
   display: contents;
 }
@@ -552,6 +566,10 @@ body {
 
 .project-impacts:has(li:only-child) {
   grid-template-columns: minmax(0, 1fr);
+}
+
+.project-impacts:has(li:nth-child(2):last-child) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .project-impacts h3 {

@@ -71,7 +71,7 @@ function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
           <h2 id={titleId} className="project-title">
             {card.title}
           </h2>
-          <p className="project-summary">{card.summary}</p>
+          <p className="project-summary">{card.blurb ?? card.summary}</p>
           <Rule />
           <div className="project-meta">
             <div className="project-problem">
