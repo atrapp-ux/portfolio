@@ -906,20 +906,7 @@ body {
 }
 
 #project-1 .project-stage {
-  display: block;
-  position: absolute;
-  left: 824px;
-  right: auto;
-  top: 0;
-  bottom: auto;
-  z-index: 1;
-  width: 488px;
-  height: 888px;
-  background: url("/project-card/card-1-preview-bg.jpg") center / cover no-repeat;
-  border: 0;
-  border-radius: 48px;
-  box-shadow: none;
-  transform: none;
+  display: none;
 }
 
 #project-1 .project-slot {
@@ -1083,33 +1070,44 @@ body {
   }
 
   #project-1 .project-art {
-    display: flex;
+    display: block;
     position: relative;
-    z-index: 3;
-    justify-content: center;
+    z-index: 1;
     width: 100%;
-    aspect-ratio: auto;
+    aspect-ratio: 754 / 330;
   }
 
   #project-1 .project-stage {
-    left: 10%;
-    right: 10%;
+    display: block;
+    position: absolute;
+    left: 6.4987%;
+    right: 7.4271%;
     top: 0;
+    bottom: auto;
+    z-index: auto;
     width: auto;
     height: calc(100% + 48px);
-    z-index: 1;
-    border-radius: 32px;
+    background: #dff1c5;
+    border: 0.799px solid #787878;
+    border-radius: 30px;
+    box-shadow: 0 0 9.831px rgba(0, 0, 0, 0.08);
+    transform: none;
   }
 
   #project-1 .project-slot {
-    position: relative;
-    left: auto;
-    top: auto;
-    z-index: 2;
-    width: 74%;
+    position: absolute;
+    left: 33.289%;
+    top: 10%;
+    z-index: 1;
+    width: 30.698%;
     height: auto;
-    aspect-ratio: 1764 / 3209;
-    margin: 0 auto -68px;
+    aspect-ratio: 231.47 / 467;
+    margin: 0;
+    padding: 16px 12px 20px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
   }
 
   #project-1 .project-panel {
@@ -1119,7 +1117,7 @@ body {
     top: auto;
     width: auto;
     height: auto;
-    padding: 96px clamp(20px, 7.43%, 56px) 40px;
+    padding: 49px clamp(20px, 7.43%, 56px) 40px;
     background: #fcfcfc;
     border-width: 0.799px;
   }
