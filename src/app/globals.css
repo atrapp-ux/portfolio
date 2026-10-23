@@ -5,6 +5,7 @@
   --ink: #000000;
   --name: #ff005e;
   --card: #ffffff;
+  --cursor-hand: pointer;
 }
 
 html {
@@ -634,6 +635,22 @@ body {
   border-radius: 27px;
 }
 
+.project-slot-link {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-slot-link:focus-visible {
+  outline: 2px solid #517aff;
+  outline-offset: 3px;
+}
+
 .project-cta-row {
   position: absolute;
   right: 387px;
@@ -651,7 +668,7 @@ body {
   border-radius: 42.747px;
   color: #ff005e;
   background: transparent;
-  cursor: pointer;
+  cursor: var(--cursor-hand, pointer);
   font-family: var(--font-display), "Google Sans Flex", "Google Sans", Arial, sans-serif;
   font-size: 17.689px;
   font-weight: 400;
@@ -671,7 +688,7 @@ body {
   background: #ff005e;
   border-color: #ff005e;
   color: #fff;
-  cursor: pointer;
+  cursor: var(--cursor-hand, pointer);
 }
 
 .project-cta:hover img,
@@ -1411,7 +1428,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   text-align: center;
-  cursor: pointer;
+  cursor: var(--cursor-hand, pointer);
 }
 
 .research-tab:hover {
@@ -2039,7 +2056,7 @@ body {
   background: #8e8e8e;
   aspect-ratio: 722 / 1433;
   overflow: hidden;
-  cursor: zoom-in;
+  cursor: var(--cursor-hand, pointer);
 }
 
 .image-row-slot:focus-visible {
@@ -2072,7 +2089,7 @@ body {
   left: auto;
   width: auto;
   border: 0;
-  cursor: pointer;
+  cursor: var(--cursor-hand, pointer);
 }
 
 .image-row-modal-title {
@@ -2117,5 +2134,30 @@ body {
   .image-row-slot {
     border-radius: calc(52 / 722 * 100cqi);
   }
+}
+
+a,
+a:hover,
+a:active,
+a:focus,
+a:focus-visible,
+button,
+button:hover,
+button:active,
+button:focus,
+button:focus-visible,
+[role="button"],
+[role="button"]:hover,
+[role="tab"],
+[role="tab"]:hover,
+summary,
+label,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+select {
+  cursor: var(--cursor-hand, pointer);
 }
 

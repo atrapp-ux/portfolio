@@ -60,12 +60,18 @@ function ProjectCardArticle({ card }: { card: ProjectCardContent }) {
         <div className="project-art">
           <div className="project-stage" aria-hidden="true" />
           <div className="project-slot">
-            {card.image.src ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={publicAsset(card.image.src)} alt={card.image.alt} />
-            ) : (
-              <p>{card.image.label}</p>
-            )}
+            <Link
+              className="project-slot-link"
+              href={`/projects/${card.id}`}
+              aria-label={`${card.cta.label}: ${card.title}`}
+            >
+              {card.image.src ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={publicAsset(card.image.src)} alt="" />
+              ) : (
+                <p>{card.image.label}</p>
+              )}
+            </Link>
           </div>
         </div>
         <div className="project-panel">
