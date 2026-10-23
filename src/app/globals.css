@@ -874,6 +874,14 @@ body {
     font-size: 12px;
   }
 
+  .project-summary {
+    margin-top: 12px;
+  }
+
+  .project-meta-body {
+    margin-top: 8px;
+  }
+
   .project-kicker {
     font-size: 14px;
   }
@@ -987,6 +995,13 @@ body {
   background-size: 100% 100%;
 }
 
+.project-hero-frame {
+  aspect-ratio: 3300 / 1178;
+  max-height: none;
+  background-size: cover;
+  background-position: center;
+}
+
 .project-home {
   position: absolute;
   top: 24px;
@@ -1021,6 +1036,23 @@ body {
 .project-home:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 3px;
+}
+
+@media (max-width: 402px) {
+  .project-hero .project-home {
+    top: 12px;
+    left: 12px;
+    gap: 6px;
+    width: auto;
+    height: 36px;
+    padding: 0 12px 0 14px;
+    font-size: 14px;
+  }
+
+  .project-hero .project-home img {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .project-heading {

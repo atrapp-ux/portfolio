@@ -44,6 +44,8 @@
  * `public/image-row/`). Leave `src` empty for the gray placeholder.
  * Clicking a slot opens it.
  * `cta.href` is unused.
+ * `heroSrc` is the project page header image. Only project 1 uses its
+ * own frame. The other pages keep the shared gradient.
  */
 
 export const projectArrows = {
@@ -133,6 +135,7 @@ type ProjectFields = {
     }[];
   };
   cta: { label: string; href: string };
+  heroSrc: string;
 };
 
 export type ProjectCardContent = ProjectFields & {
@@ -394,6 +397,7 @@ const projectTemplate: ProjectFields = {
     label: "View Project",
     href: "",
   },
+  heroSrc: "/project-hero-gradient.jpg",
 };
 
 function projectEntry(
@@ -443,6 +447,7 @@ export const projects: ProjectCardContent[] = [
         arrow: "down",
       },
     ],
+    heroSrc: "/project-hero/project-1.jpg",
   }),
   projectEntry("project-2", "imageLeft"),
   projectEntry("project-3", "imageRight"),

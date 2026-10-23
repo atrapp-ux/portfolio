@@ -25,8 +25,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
   return (
     <main className="project-page">
       <header
-        className="project-hero"
-        style={{ ["--project-hero-image" as string]: `url("${publicAsset("/project-hero-gradient.jpg")}")` }}
+        className={project.id === "project-1" ? "project-hero project-hero-frame" : "project-hero"}
+        style={{ ["--project-hero-image" as string]: `url("${publicAsset(project.heroSrc)}")` }}
       >
         <Link className="project-home" href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
