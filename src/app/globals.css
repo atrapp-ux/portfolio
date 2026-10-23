@@ -936,7 +936,7 @@ body {
     left: 0;
     right: 0;
     height: calc(100% + 64px);
-    background: linear-gradient(180deg, #e7efff 0%, #c5d6fb 46%, #7ea6f4 100%);
+    background: linear-gradient(180deg, #8eacf3 0%, #7ea6f4 18%, #6f96f0 100%);
     border: 0;
   }
 
