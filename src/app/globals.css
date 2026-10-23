@@ -1951,7 +1951,7 @@ body {
 .image-row-track {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: calc(170 / 2506 * 100cqi);
+  gap: calc(64 / 2294 * 100cqi);
 }
 
 .image-row-slide {
@@ -1964,7 +1964,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  border-radius: calc(52 / 2506 * 100cqi);
+  border-radius: calc(52 / 2294 * 100cqi);
   background: #8e8e8e;
   aspect-ratio: 722 / 1433;
   overflow: hidden;
@@ -2046,10 +2046,12 @@ body {
 
   .image-row-track {
     display: flex;
-    gap: 0;
+    gap: 16px;
+    padding-inline: 16px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -2062,7 +2064,7 @@ body {
     display: block;
     flex: 0 0 100%;
     box-sizing: border-box;
-    padding: 0 16px;
+    padding: 0;
     scroll-snap-align: center;
     scroll-snap-stop: always;
     container-type: inline-size;

@@ -38,7 +38,9 @@
  * `photo_quote`, `single`, or `multi`. Leave a photo `src` empty for the
  * gray circle. Add another column to `multi` by appending to `items`.
  * `imageRow` is the equal three-image row under the quote blocks.
- * Leave `src` empty for the gray placeholder. Clicking a slot opens it.
+ * Set `src` to a file in `public/` (the three screens live in
+ * `public/image-row/`). Leave `src` empty for the gray placeholder.
+ * Clicking a slot opens it.
  * `cta.href` is unused.
  */
 
@@ -372,9 +374,18 @@ const projectTemplate: ProjectFields = {
     },
   ],
   imageRow: [
-    { src: "", alt: "" },
-    { src: "", alt: "" },
-    { src: "", alt: "" },
+    {
+      src: "/image-row/screen-one.png",
+      alt: "An application that cares about your candidate's success",
+    },
+    {
+      src: "/image-row/screen-two.png",
+      alt: "A centralized hub for tracking updates and tasks",
+    },
+    {
+      src: "/image-row/screen-three.png",
+      alt: "All appointments, resources, and tools in one place",
+    },
   ],
   cta: {
     label: "View Project",
