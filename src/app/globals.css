@@ -722,78 +722,92 @@ body {
 
 @media (max-width: 767px) {
   .project-section {
+    --stack: min(754px, calc(100cqi - 32px));
     padding: 40px 0 72px;
   }
 
   .project-fit {
-    width: min(754px, calc(100% - 32px));
+    width: var(--stack);
     height: auto;
     overflow: visible;
   }
 
   .project-frame {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     width: 100%;
     height: auto;
+    padding: calc(25px * var(--stack) / 754px) calc(30px * var(--stack) / 754px) calc(36px * var(--stack) / 754px);
     transform: none;
+    background: #fcfcfc;
+    border: 0.804px solid #787878;
+    border-radius: calc(30px * var(--stack) / 754px);
+    box-shadow: 0 0 9.895px rgba(0, 0, 0, 0.08);
   }
 
   .project-art {
     display: block;
     position: relative;
     z-index: 1;
+    flex: none;
     width: 100%;
-    aspect-ratio: 754 / 330;
+    aspect-ratio: 683 / 502;
   }
 
   .project-stage {
     display: block;
     position: absolute;
-    left: 6.4987%;
-    right: 7.4271%;
-    top: 0;
-    bottom: auto;
-    height: calc(100% + 48px);
-    background: #dff1c5;
-    border: 0.799px solid #787878;
-    border-radius: 30px;
-    box-shadow: 0 0 9.831px rgba(0, 0, 0, 0.08);
+    inset: 0;
+    height: auto;
+    background: #c5d0f1;
+    border: 0.804px solid #787878;
+    border-radius: calc(30px * var(--stack) / 754px);
+    box-shadow: 0 0 9.895px rgba(0, 0, 0, 0.08);
   }
 
   .project-slot {
-    left: 33.289%;
-    top: 10%;
+    left: 27.67%;
+    top: 4.98%;
     z-index: 1;
-    width: 30.698%;
-    height: auto;
-    aspect-ratio: 231.47 / 467;
-    border-width: 0.846px;
-    border-radius: 23.688px;
+    width: 48.76%;
+    height: 95.02%;
+    aspect-ratio: auto;
+    background: #fff;
+    border: 0;
+    border-radius: calc(31px * var(--stack) / 754px) calc(31px * var(--stack) / 754px) 0 0;
+    box-shadow: 0 -5px 10.8px 6px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
   }
 
   .project-slot p {
     position: absolute;
     top: 22%;
     left: 50%;
-    width: 73px;
+    width: 70%;
     transform: translate(-50%, -50%);
-    font-size: 10.873px;
+    font-size: clamp(11px, calc(14px * var(--stack) / 754px), 14px);
   }
 
   .project-slot img {
-    border-radius: 22px;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: top center;
   }
 
   .project-panel {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     left: auto;
     top: auto;
     width: auto;
     height: auto;
     margin-top: 0;
-    padding: 49px clamp(20px, 7.43%, 56px) 40px;
-    background: #fcfcfc;
-    border-width: 0.799px;
+    padding: calc(38px * var(--stack) / 754px) calc(28px * var(--stack) / 754px) 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .project-title,
@@ -809,6 +823,10 @@ body {
     width: 100%;
     height: 1px;
     margin-top: 24px;
+  }
+
+  .project-summary + .project-rule {
+    margin-top: calc(48px * var(--stack) / 754px);
   }
 
   .project-meta {
@@ -843,7 +861,7 @@ body {
     grid-row: 2;
     width: 100%;
     height: 1px;
-    margin: 4px 0 0;
+    margin: calc(28px * var(--stack) / 754px) 0 0;
   }
 
   .project-rule-v-split {
@@ -855,7 +873,7 @@ body {
   }
 
   .project-impact-label {
-    margin-top: 22px;
+    margin-top: calc(30px * var(--stack) / 754px);
   }
 
   .project-impacts {
@@ -865,29 +883,29 @@ body {
   }
 
   .project-title {
-    font-size: 22px;
+    font-size: clamp(22px, calc(32.2px * var(--stack) / 754px), 32.2px);
   }
 
   .project-summary,
   .project-meta-body,
   .project-impact-copy p {
-    font-size: 12px;
+    font-size: clamp(13px, calc(16.1px * var(--stack) / 754px), 16.1px);
   }
 
   .project-summary {
-    margin-top: 12px;
+    margin-top: calc(28px * var(--stack) / 754px);
   }
 
   .project-meta-body {
-    margin-top: 8px;
+    margin-top: clamp(8px, calc(10px * var(--stack) / 754px), 16px);
   }
 
   .project-kicker {
-    font-size: 14px;
+    font-size: clamp(13px, calc(16.1px * var(--stack) / 754px), 16.1px);
   }
 
   .project-impacts h3 {
-    font-size: 20px;
+    font-size: clamp(16px, calc(20.13px * var(--stack) / 754px), 20.13px);
   }
 
   .project-arrow {
@@ -928,33 +946,34 @@ body {
 }
 
 @media (max-width: 767px) {
-  #project-1 .project-art {
-    aspect-ratio: 754 / 480;
-  }
-
   #project-1 .project-stage {
-    left: 0;
-    right: 0;
-    height: calc(100% + 64px);
-    background: linear-gradient(180deg, #8eacf3 0%, #7ea6f4 18%, #6f96f0 100%);
-    border: 0;
+    background: #c5d0f1;
+    border: 0.804px solid #787878;
   }
 
   #project-1 .project-slot {
-    left: 30%;
-    top: 0;
-    width: 40%;
-    height: auto;
-    aspect-ratio: 1764 / 3209;
+    left: 27.67%;
+    top: 4.98%;
+    width: 48.76%;
+    height: 95.02%;
+    aspect-ratio: auto;
     padding: 0;
+    background: #fff;
+    border: 0;
+    border-radius: calc(31px * var(--stack) / 754px) calc(31px * var(--stack) / 754px) 0 0;
+    overflow: hidden;
   }
 
   #project-1 .project-slot-link {
-    align-items: flex-start;
+    align-items: center;
   }
 
   #project-1 .project-slot img {
-    margin-top: 20px;
+    margin-top: 0;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0;
+    filter: none;
   }
 }
 
