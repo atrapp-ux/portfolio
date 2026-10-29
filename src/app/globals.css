@@ -761,9 +761,10 @@ body {
     inset: 0;
     height: auto;
     background: #c5d0f1;
-    border: 0.804px solid #787878;
+    border: 0;
+    outline: none;
     border-radius: calc(30px * var(--stack) / 754px);
-    box-shadow: 0 0 9.895px rgba(0, 0, 0, 0.08);
+    box-shadow: none;
   }
 
   .project-slot {
@@ -773,10 +774,11 @@ body {
     width: 48.76%;
     height: 95.02%;
     aspect-ratio: auto;
-    background: #fff;
+    background: transparent;
     border: 0;
-    border-radius: calc(31px * var(--stack) / 754px) calc(31px * var(--stack) / 754px) 0 0;
-    box-shadow: 0 -5px 10.8px 6px rgba(0, 0, 0, 0.02);
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
     overflow: hidden;
   }
 
@@ -948,7 +950,9 @@ body {
 @media (max-width: 767px) {
   #project-1 .project-stage {
     background: #c5d0f1;
-    border: 0.804px solid #787878;
+    border: 0;
+    outline: none;
+    box-shadow: none;
   }
 
   #project-1 .project-slot {
@@ -958,9 +962,11 @@ body {
     height: 95.02%;
     aspect-ratio: auto;
     padding: 0;
-    background: #fff;
+    background: transparent;
     border: 0;
-    border-radius: calc(31px * var(--stack) / 754px) calc(31px * var(--stack) / 754px) 0 0;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
     overflow: hidden;
   }
 
