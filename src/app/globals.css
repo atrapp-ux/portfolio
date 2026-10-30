@@ -347,6 +347,78 @@ body {
   }
 }
 
+/* Stacked mobile hero: one row, smaller icons, left-aligned labels.
+   767px is the existing stacked breakpoint. Tablet (768px+) stays put. */
+@media (max-width: 767px) {
+  .tools-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    gap: 0;
+  }
+
+  .tool {
+    flex: 1 1 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 0;
+    padding: 0 4px 0 8px;
+    text-align: left;
+  }
+
+  .tool:first-child {
+    padding-left: 0;
+  }
+
+  .tool > img {
+    flex: none;
+    width: 20.111px;
+    height: 20.111px;
+  }
+
+  .tool:last-child > img {
+    width: 16.83px;
+    height: 16.83px;
+    margin-top: 1.64px;
+  }
+
+  .tool p {
+    width: 100%;
+    max-width: 71px;
+    margin-top: 13px;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.37;
+    text-align: left;
+  }
+
+  .tools-rule {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .tools-rule img {
+    flex: none;
+    width: 217.09px;
+    height: 1.19492px;
+    max-width: none;
+    transform: rotate(90deg);
+  }
+}
+
 /* Goal quote under the tools bar. */
 .quotes-section {
   background: #fff;
