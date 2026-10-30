@@ -19,12 +19,6 @@ export const tools = [
     iconHeight: 28.678,
   },
   {
-    label: "Strong advocate for enjoyable experiences",
-    icon: "/tools/heart.svg",
-    iconWidth: 28.678,
-    iconHeight: 28.678,
-  },
-  {
     label: "AI enhanced workflow, vibe coding",
     icon: "/tools/diamond.svg",
     iconWidth: 28.678,

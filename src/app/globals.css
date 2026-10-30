@@ -185,7 +185,7 @@ body {
   }
 }
 
-/* Tools bar: six icon tiles. Dividers show only in the desktop row.
+/* Tools bar: five icon tiles. Dividers show only in the desktop row.
    Negative margin closes the hero's unused viewport height. Desktop and
    tablet land on the card stack; mobile stops under the intro box. */
 .tools-section {
@@ -203,7 +203,7 @@ body {
 
 .tools-bar {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px 4px;
   max-width: 420px;
   margin: 0 auto;
@@ -285,7 +285,7 @@ body {
   }
 
   .tools-bar {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     max-width: 760px;
     gap: 12px 8px;
   }
