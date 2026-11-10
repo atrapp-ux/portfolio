@@ -132,7 +132,9 @@ type ProjectFields = {
         heading: string;
         items: { lead: string; text: string }[];
       }[];
+      bullets?: string[];
     }[];
+    initialTabId?: string;
   };
   cta: { label: string; href: string };
   heroSrc: string;
@@ -448,6 +450,75 @@ export const projects: ProjectCardContent[] = [
       },
     ],
     heroSrc: "/project-hero/project-1.jpg",
+    imageTexts: [],
+    research: (() => {
+      const research = structuredClone(projectTemplate.research);
+      const interviews = research.tabs.find((tab) => tab.id === "user-interviews");
+      const hiring = interviews?.columns?.find((column) => column.heading === "Hiring teams");
+      const candidates = interviews?.columns?.find((column) => column.heading === "Candidates");
+      if (hiring) {
+        hiring.image = { src: "/research/hiring-portrait.png", alt: "" };
+        hiring.items = [
+          {
+            lead: "",
+            text: "Hiring teams exhausted from the endless questions and clarifications they field from candidates daily",
+          },
+          {
+            lead: "",
+            text: "Teams feeling overwhelmed by the sheer number of applications requiring way more organization, reviewing time from the team, and harsher deadlines to keep",
+          },
+          {
+            lead: "",
+            text: "Admins trying to remain warm and understanding to candidate questions and requests despite being stretched thin and not having enough time to dedicate to this",
+          },
+        ];
+      }
+      if (candidates) {
+        candidates.image = { src: "/research/candidate-portrait.png", alt: "" };
+        candidates.items = [
+          {
+            lead: "",
+            text: "Candidates complaining about getting a bit lost on what needs doing on their applications",
+          },
+          {
+            lead: "",
+            text: "Candidates getting frustrated that they are not getting jobs, fitting the job descriptions, or getting enough feedback in this endless loop of applying and rejection",
+          },
+          {
+            lead: "",
+            text: "Candidates not knowing how to perform or show their best selves on applications",
+          },
+        ];
+      }
+      research.tabs = research.tabs.filter((tab) => tab.id !== "desktop-research");
+      research.tabs.unshift({
+        id: "key-learnings",
+        label: "Key Learnings",
+        bullets: [
+          "Applications are designed to serve many candidates, but this also can make them feel impersonal and generic. Candidate feel like they get lost in the void as fill in as many as they can and then wait to hear back",
+          "Candidates are fearful that they might miss notifications or interviews or job details, especially with jobs hard to come by.",
+          "Hiring pipelines are getting more extensive and long, meaning candidates need to keep track of tasks, schedules, timelines to ensure they stay ahead",
+          "Candidates asking more questions and needing more guidance and time to complete applications because they want to put their best foot forward, which in turn puts more pressure on hiring teams",
+        ],
+      });
+      research.initialTabId = "key-learnings";
+      return research;
+    })(),
+    textImages: (() => {
+      const blocks = structuredClone(projectTemplate.textImages);
+      const problem = blocks[0]?.sections.find((section) => section.label === "The Problem");
+      if (problem) {
+        problem.body =
+          "The candidate market soared in 2024, with a huge boost in candidates in the job market and jobs harder to come by. Candidates were tired, frustrated, ghosted, and desperate to know where they stood in the process and how they stacked up. Hiring teams were getting overwhelmed by the sheer number of candidates, their questions, and were worried they were not supplying a good and fair candidate experience throughout the process.";
+      }
+      if (blocks[0]) {
+        blocks[0].image = {
+          src: "/problem/project-1-phone.png",
+          alt: "Phone lock screen with notifications for new applications and candidate questions",
+        };
+      }
+      return blocks;
+    })(),
   }),
   projectEntry("project-2", "imageLeft"),
   projectEntry("project-3", "imageRight"),

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Google_Sans_Flex, Goudy_Bookletter_1911 } from "next/font/google";
 import { homeContent } from "@content/home";
-import { publicAsset } from "@/lib/public-asset";
 import "./globals.css";
 
 const display = Google_Sans_Flex({
@@ -28,9 +27,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${display.variable} ${quote.variable} h-full`}
-      style={{
-        ["--cursor-hand" as string]: `url("${publicAsset("/cursors/pointing-hand.png")}") 11 0, pointer`,
-      }}
     >
       <body className="min-h-full antialiased">{children}</body>
     </html>

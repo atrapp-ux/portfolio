@@ -25,15 +25,18 @@ export type ResearchTab = {
   paragraphs?: ResearchParagraph[];
   aside?: { src: string; alt: string };
   columns?: ResearchColumn[];
+  bullets?: string[];
 };
 
 export type ProjectResearchContent = {
   title: string;
   tabs: ResearchTab[];
+  initialTabId?: string;
 };
 
 export function ProjectResearch({ research }: { research: ProjectResearchContent }) {
-  const [active, setActive] = useState(0);
+  const initialIndex = research.tabs.findIndex((item) => item.id === research.initialTabId);
+  const [active, setActive] = useState(initialIndex >= 0 ? initialIndex : 0);
   const baseId = useId();
   const tabs = research.tabs;
   const selected = Math.min(active, Math.max(tabs.length - 1, 0));
@@ -125,7 +128,7 @@ export function ProjectResearch({ research }: { research: ProjectResearchContent
                   <ul className="research-list">
                     {column.items.map((item) => (
                       <li key={`${item.lead}${item.text}`}>
-                        <span className="research-lead">{item.lead}</span>
+                        {item.lead ? <span className="research-lead">{item.lead}</span> : null}
                         {item.text}
                       </li>
                     ))}
@@ -134,6 +137,13 @@ export function ProjectResearch({ research }: { research: ProjectResearchContent
               </Fragment>
             ))}
           </div>
+        ) : null}
+        {tab.bullets ? (
+          <ul className="research-list research-bullets">
+            {tab.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
         ) : null}
       </div>
     </section>

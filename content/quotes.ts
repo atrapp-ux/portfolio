@@ -8,8 +8,7 @@
 
 export const quoteContent = {
   label: "My goal as a designer",
-  before: "Making the technology ",
-  accent: "invisible",
-  after:
-    ".\nForget the screens and buttons under our fingertips.\nI want you to remember the solution, not the device.",
+  before: "I turn real user problems into designs that actually ",
+  accent: "answer",
+  after: " them",
 } as const;

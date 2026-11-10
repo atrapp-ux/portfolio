@@ -24,16 +24,20 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
   return (
     <main className="project-page">
-      <header
-        className={project.id === "project-1" ? "project-hero project-hero-frame" : "project-hero"}
-        style={{ ["--project-hero-image" as string]: `url("${publicAsset(project.heroSrc)}")` }}
-      >
+      <header className="project-top">
         <Link className="project-home" href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={publicAsset("/project-home.svg")} alt="" width={24} height={24} />
+          <img src={publicAsset("/project-home.svg")} alt="" width={18} height={18} />
           Home
         </Link>
       </header>
+      <div
+        className={project.id === "project-1" ? "project-hero project-hero-frame" : "project-hero"}
+        style={{
+          ["--project-hero-image" as string]: `url("${publicAsset(project.heroSrc)}")`,
+          ["--project-hero-mobile" as string]: `url("${publicAsset("/project-hero/mobile-header.png")}")`,
+        }}
+      />
       <section className="project-heading" aria-labelledby="project-quote">
         <div className="project-heading-inner">
           <p className="project-heading-eyebrow">{project.eyebrow}</p>
